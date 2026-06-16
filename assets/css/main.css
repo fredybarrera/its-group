@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-navy;
+  }
+
+  ::selection {
+    @apply bg-accent-200 text-navy;
+  }
+}
+
+@layer components {
+  /* Contenedor estándar de sección */
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* Botón primario (CTA principal) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-6 py-3
+      font-semibold text-white shadow-sm transition-all duration-200
+      hover:bg-brand-700 hover:shadow-md focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand-600;
+  }
+
+  /* Botón secundario (acento cian) */
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent-500 px-6 py-3
+      font-semibold text-navy shadow-sm transition-all duration-200
+      hover:bg-accent-400 hover:shadow-md focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-accent-500;
+  }
+
+  /* Botón fantasma / contorno */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-brand-200
+      bg-white px-6 py-3 font-semibold text-brand-700 transition-all duration-200
+      hover:border-brand-400 hover:bg-brand-50 focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand-600;
+  }
+
+  /* Etiqueta superior de sección (eyebrow) */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-accent-600;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300
+      hover:-translate-y-1 hover:border-brand-100 hover:shadow-lg;
+  }
+
+  /* Tipografía de artículos del blog (sin plugin de typography) */
+  .article-content {
+    @apply text-[1.0625rem] leading-relaxed text-slate-700;
+  }
+  .article-content :where(h2) {
+    @apply mt-10 text-2xl font-bold text-navy;
+  }
+  .article-content :where(h3) {
+    @apply mt-8 text-xl font-bold text-navy;
+  }
+  .article-content :where(p) {
+    @apply mt-4;
+  }
+  .article-content :where(ul) {
+    @apply mt-4 list-disc space-y-1.5 pl-6 marker:text-brand-400;
+  }
+  .article-content :where(ol) {
+    @apply mt-4 list-decimal space-y-1.5 pl-6 marker:font-semibold marker:text-brand-500;
+  }
+  .article-content :where(a) {
+    @apply font-semibold text-brand-600 underline-offset-2 hover:underline;
+  }
+  .article-content :where(blockquote) {
+    @apply mt-6 border-l-4 border-accent-400 bg-slate-50 py-2 pl-4 italic text-slate-600;
+  }
+  .article-content :where(code) {
+    @apply rounded bg-slate-100 px-1.5 py-0.5 text-sm text-brand-700;
+  }
+  .article-content :where(strong) {
+    @apply font-semibold text-navy;
+  }
+}

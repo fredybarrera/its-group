@@ -1,0 +1,30 @@
+# Nuxt
+.nuxt
+.output
+.data
+dist
+
+# Dependencias
+node_modules
+
+# Logs
+*.log
+npm-debug.log*
+devsrv.out
+devsrv.err
+
+# Artefacto generado por el preset azure-swa de Nitro al construir.
+# La configuración que se despliega es public/staticwebapp.config.json.
+/staticwebapp.config.json
+
+# Entorno
+.env
+.env.*
+!.env.example
+
+# Editor / SO
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+Thumbs.db

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a2540" />
+      <stop offset="1" stop-color="#1b417f" />
+    </linearGradient>
+    <linearGradient id="mark" x1="80" y1="80" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1e5fbf" />
+      <stop offset="1" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1050" cy="120" r="260" fill="#06b6d4" opacity="0.12" />
+  <circle cx="120" cy="560" r="220" fill="#1e5fbf" opacity="0.18" />
+  <rect x="80" y="80" width="110" height="110" rx="24" fill="url(#mark)" />
+  <path d="M112 110h46M135 110v50M118 160h34" stroke="#fff" stroke-width="9" stroke-linecap="round" />
+  <text x="80" y="330" fill="#ffffff" font-family="'Segoe UI', Arial, sans-serif" font-size="68" font-weight="800">IT Solutions Group</text>
+  <text x="80" y="400" fill="#9fd8e6" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="600">Desarrollo de software a medida · GIS / ArcGIS · Azure</text>
+  <text x="80" y="520" fill="#cbd5e1" font-family="'Segoe UI', Arial, sans-serif" font-size="28">Partner oficial de Esri Chile · Especialistas en Microsoft Azure</text>
+</svg>
