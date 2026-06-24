@@ -46,14 +46,11 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: 'upload'
-          # Rutas relativas al repo
-          app_location: '/'
-          api_location: ''
+          # Nuestro build ya generó .output/public con prerender + .output/server con functions
+          app_location: '.output/public'
+          api_location: '.output/server'
           output_location: ''
-          # Crítico: el SWA Deploy Action detecta automáticamente el preset azure-swa
-          # y usa el output de .output/public + .output/server/functions
           skip_app_build: true
-          skip_api_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
