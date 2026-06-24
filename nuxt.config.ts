@@ -63,6 +63,10 @@ export default defineNuxtConfig({
       routes: ['/', '/sitemap.xml'],
       failOnError: true,
     },
+    // 🆕 Excluir sharp del bundle de producción (no se usa en runtime)
+    externals: {
+      external: ['sharp'],
+    },
   },
 
   content: {
@@ -73,8 +77,9 @@ export default defineNuxtConfig({
   },
 
   image: {
-    quality: 80,
-    format: ['webp'],
+    // Provider 'none' o 'static' = sin runtime image processing
+    // Las imágenes se sirven tal cual desde /public, sin optimización dinámica
+    provider: 'none',
   },
 
   eslint: {
