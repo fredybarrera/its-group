@@ -57,13 +57,12 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'azure',
+    preset: 'azure-swa',
     prerender: {
       crawlLinks: true,
       routes: ['/', '/sitemap.xml'],
       failOnError: true,
     },
-    // 🆕 Excluir sharp del bundle de producción (no se usa en runtime)
     externals: {
       external: ['sharp'],
     },

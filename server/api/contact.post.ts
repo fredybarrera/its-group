@@ -111,11 +111,23 @@ ${message}`
         text,
       },
     })
-  } catch {
+  } catch (error: any) {
+    // Loggear el error completo para diagnostico en Azure App Insights / Log stream.
+    // Resend devuelve detalles utiles en error.data (ej: "Domain not verified").
+    console.error('[contact.post] Error de Resend:', {
+      message: error?.message,
+      statusCode: error?.statusCode,
+      statusMessage: error?.statusMessage,
+      data: error?.data,
+      responseData: error?.response?._data,
+    })
+
     throw createError({
       statusCode: 502,
       statusMessage: 'No se pudo enviar el correo',
-      data: { message: 'No se pudo enviar el mensaje. Inténtalo nuevamente o escríbenos por WhatsApp.' },
+      data: {
+        message: 'No se pudo enviar el mensaje. Inténtalo nuevamente o escríbenos por WhatsApp.',
+      },
     })
   }
 
