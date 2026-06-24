@@ -10,48 +10,59 @@ on:
       - main
 
 jobs:
-  build_and_deploy:
+  build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: Build and Deploy
-    env:
-      # El preset `azure` de Nitro genera .output/public y .output/server
-      # junto con staticwebapp.config.json automáticamente.
-      NITRO_PRESET: azure
+    name: Build and Deploy Job
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
+          lfs: false
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build Nuxt site (azure-swa preset)
         run: npm run build
+        env:
+          NITRO_PRESET: azure-swa
+          NUXT_PUBLIC_SITE_URL: ${{ vars.NUXT_PUBLIC_SITE_URL || 'https://www.itsgroup.dev' }}
+          NUXT_PUBLIC_CALENDLY_URL: ${{ vars.NUXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/fredy-barrera-a/30min' }}
 
-      - name: Deploy
+      - name: Deploy to Azure Static Web Apps
+        id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: upload
+          action: 'upload'
+          # Rutas relativas al repo
           app_location: '/'
-          api_location: '.output/server'
-          output_location: '.output/public'
+          api_location: ''
+          output_location: ''
+          # Crítico: el SWA Deploy Action detecta automáticamente el preset azure-swa
+          # y usa el output de .output/public + .output/server/functions
           skip_app_build: true
           skip_api_build: true
 
-  close_pull_request:
+  close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
-    name: Close Pull Request
+    name: Close Pull Request Job
     steps:
       - name: Close Pull Request
+        id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: close
+          action: 'close'

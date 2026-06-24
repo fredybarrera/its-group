@@ -57,9 +57,11 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    preset: 'azure',
     prerender: {
       crawlLinks: true,
       routes: ['/', '/sitemap.xml'],
+      failOnError: true,
     },
   },
 

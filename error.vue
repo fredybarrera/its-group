@@ -1,43 +1,54 @@
 <script setup lang="ts">
-import { Home, ArrowLeft } from 'lucide-vue-next'
 import type { NuxtError } from '#app'
+import { site } from '~/data/site'
 
 const props = defineProps<{ error: NuxtError }>()
 
 const is404 = computed(() => props.error?.statusCode === 404)
 
-useHead({ title: is404.value ? 'Página no encontrada' : 'Error' })
+const heading = computed(() => (is404.value ? 'Página no encontrada' : 'Algo salió mal'))
+const description = computed(() =>
+  is404.value
+    ? 'La página que buscas no existe o fue movida. Te invitamos a volver al inicio o explorar nuestros servicios.'
+    : 'Ocurrió un error inesperado. Por favor, intenta nuevamente en unos momentos.',
+)
+
+useHead({
+  title: heading.value,
+  meta: [{ name: 'robots', content: 'noindex' }],
+})
+
+function handleError() {
+  return clearError({ redirect: '/' })
+}
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col bg-navy">
-    <div class="container flex flex-1 flex-col items-center justify-center py-20 text-center">
-      <p class="font-display text-7xl font-extrabold text-accent-400 sm:text-8xl">
-        {{ error.statusCode }}
-      </p>
-      <h1 class="mt-4 text-2xl font-bold text-white sm:text-3xl">
-        {{ is404 ? 'Página no encontrada' : 'Algo salió mal' }}
-      </h1>
-      <p class="mt-3 max-w-md text-slate-300">
-        {{
-          is404
-            ? 'La página que buscas no existe o fue movida. Vuelve al inicio para seguir navegando.'
-            : 'Ocurrió un error inesperado. Intenta nuevamente en unos momentos.'
-        }}
-      </p>
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <button type="button" class="btn-accent" @click="clearError({ redirect: '/' })">
-          <Home class="h-5 w-5" />
-          Ir al inicio
-        </button>
-        <NuxtLink
-          to="/contacto"
-          class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
-        >
-          <ArrowLeft class="h-5 w-5" />
-          Contáctanos
-        </NuxtLink>
-      </div>
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center">
+    <p class="text-sm font-semibold uppercase tracking-widest text-slate-500">
+      Error {{ error?.statusCode ?? 500 }}
+    </p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+      {{ heading }}
+    </h1>
+    <p class="mt-4 max-w-xl text-base text-slate-600">
+      {{ description }}
+    </p>
+
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <button
+        type="button"
+        class="inline-flex items-center justify-center rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+        @click="handleError"
+      >
+        Volver al inicio
+      </button>
+      <NuxtLink
+        to="/contacto"
+        class="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+      >
+        Contactar a {{ site.name }}
+      </NuxtLink>
     </div>
   </div>
 </template>

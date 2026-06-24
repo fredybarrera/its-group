@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
   "navigationFallback": {
-    "rewrite": "/index.html",
+    "rewrite": "/404.html",
     "exclude": [
       "/api/*",
       "/_nuxt/*",
