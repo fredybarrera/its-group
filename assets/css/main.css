@@ -19,7 +19,7 @@
   }
 
   ::selection {
-    @apply bg-accent-200 text-navy;
+    @apply bg-brand-200 text-navy;
   }
 }
 
@@ -37,11 +37,11 @@
       focus-visible:outline-offset-2 focus-visible:outline-brand-600;
   }
 
-  /* Botón secundario (acento cian) */
+  /* Botón secundario (acento ámbar) */
   .btn-accent {
     @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent-500 px-6 py-3
-      font-semibold text-navy shadow-sm transition-all duration-200
-      hover:bg-accent-400 hover:shadow-md focus-visible:outline focus-visible:outline-2
+      font-semibold text-white shadow-sm transition-all duration-200
+      hover:bg-accent-600 hover:shadow-md focus-visible:outline focus-visible:outline-2
       focus-visible:outline-offset-2 focus-visible:outline-accent-500;
   }
 
@@ -53,14 +53,19 @@
       focus-visible:outline-offset-2 focus-visible:outline-brand-600;
   }
 
-  /* Etiqueta superior de sección (eyebrow) */
+  /* Etiqueta superior de sección (eyebrow) — ámbar para contraste y diferenciación */
   .eyebrow {
     @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-accent-600;
   }
 
   .card {
     @apply rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300
-      hover:-translate-y-1 hover:border-brand-100 hover:shadow-lg;
+      hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-100/50;
+  }
+
+  /* Línea decorativa de acento verde (usar en títulos de sección) */
+  .section-line {
+    @apply block h-1 w-12 rounded-full bg-brand-500;
   }
 
   /* Tipografía de artículos del blog (sin plugin de typography) */
