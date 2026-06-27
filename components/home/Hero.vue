@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ArrowRight, CalendarCheck, MapPin, Cloud, Code2, GraduationCap } from 'lucide-vue-next'
+import { metrics } from '~/data/site'
 
 const highlights = [
   { icon: MapPin,         label: 'Partner oficial Esri Chile (ArcGIS)', color: 'text-brand-400' },
@@ -8,11 +9,7 @@ const highlights = [
   { icon: GraduationCap, label: 'Aplicaciones educativas',              color: 'text-accent-300' },
 ]
 
-const stats = [
-  { value: '+10', label: 'años de experiencia' },
-  { value: '+80', label: 'proyectos entregados' },
-  { value: '+40', label: 'clientes activos' },
-]
+const stats = metrics.slice(0, 3)
 </script>
 
 <template>
@@ -63,9 +60,9 @@ const stats = [
 
           <!-- Coordenada tipográfica — nod directo al mundo GIS -->
           <div class="mb-6 flex items-center gap-3">
-            <span class="font-mono text-xs tracking-widest text-brand-500/70">33°27′S 70°40′O</span>
+            <span class="font-mono text-xs tracking-widest text-brand-500/70">36°43′S 73°07′O</span>
             <span class="h-px flex-1 bg-brand-800/50 max-w-[60px]" />
-            <span class="text-xs font-medium text-slate-500">Santiago, Chile</span>
+            <span class="text-xs font-medium text-slate-500">Talcahuano, Chile</span>
           </div>
 
           <!-- Título con Sora — el display face caracterísico -->
@@ -79,8 +76,7 @@ const stats = [
                 aria-hidden="true"
               />
             </span>
-            <br />
-            <span class="text-slate-300">operaciones reales.</span>
+            <span class="mt-3 block text-slate-300">operaciones reales.</span>
           </h1>
 
           <p class="mt-7 max-w-lg text-[1.0625rem] leading-relaxed text-slate-400">

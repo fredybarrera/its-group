@@ -60,6 +60,8 @@ export interface Service {
   technologies: string[]
   /** Palabra clave SEO principal del servicio. */
   keyword: string
+  /** URL de demo interactiva, si existe. */
+  demoUrl?: string
 }
 
 export interface CaseStudy {

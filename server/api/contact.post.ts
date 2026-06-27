@@ -111,15 +111,16 @@ ${message}`
         text,
       },
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Loggear el error completo para diagnostico en Azure App Insights / Log stream.
     // Resend devuelve detalles utiles en error.data (ej: "Domain not verified").
+    const e = error as Record<string, unknown>
     console.error('[contact.post] Error de Resend:', {
-      message: error?.message,
-      statusCode: error?.statusCode,
-      statusMessage: error?.statusMessage,
-      data: error?.data,
-      responseData: error?.response?._data,
+      message: e?.message,
+      statusCode: e?.statusCode,
+      statusMessage: e?.statusMessage,
+      data: e?.data,
+      responseData: (e?.response as Record<string, unknown>)?._data,
     })
 
     throw createError({

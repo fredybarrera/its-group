@@ -256,6 +256,53 @@ export const services: Service[] = [
     technologies: ['Microsoft 365', 'Azure', 'ITIL', 'Ciberseguridad', 'Power Platform'],
     keyword: 'consultoría informática y TI en Chile',
   },
+  {
+    slug: 'control-acceso-estacionamiento',
+    icon: 'CarFront',
+    category: 'Control de Acceso Vehicular',
+    title: 'Sistema de Control de Acceso a Estacionamientos',
+    shortDescription:
+      'Gestión centralizada del ingreso, salida y disponibilidad de vehículos en estacionamientos, con cobro integrado y visibilidad en tiempo real.',
+    longDescription:
+      'ParkOS unifica en una sola plataforma el control de acceso vehicular, el monitoreo de plazas disponibles y el procesamiento de cobros. Supervisores y operadores tienen visibilidad en tiempo real del estado de cada espacio, las sesiones activas y los indicadores de ocupación, eliminando los sistemas fragmentados y el papel.',
+    benefits: [
+      {
+        title: 'Visibilidad en tiempo real',
+        description:
+          'Monitorea la ocupación, las sesiones activas y los ingresos del día desde un único panel, sin necesidad de recorrer el recinto.',
+      },
+      {
+        title: 'Control de acceso centralizado',
+        description:
+          'Registra el ingreso y la salida de cada vehículo con identificador de patente, duración y estado, con historial completo.',
+      },
+      {
+        title: 'Cobro integrado',
+        description:
+          'Procesa los pagos directamente desde la plataforma, eliminando cajas manuales y reduciendo errores de cuadre.',
+      },
+    ],
+    useCases: [
+      {
+        industry: 'Estacionamientos comerciales',
+        description:
+          'Control de plazas, tarifas diferenciadas y reportes de recaudación diaria y mensual.',
+      },
+      {
+        industry: 'Edificios corporativos',
+        description:
+          'Asignación de espacios a arrendatarios y registro de acceso de visitas con validación de patente.',
+      },
+      {
+        industry: 'Municipios e instituciones públicas',
+        description:
+          'Gestión de estacionamientos regulados con trazabilidad de uso y generación de informes de fiscalización.',
+      },
+    ],
+    technologies: ['Vue / Nuxt', 'Node.js', 'PostgreSQL', 'WebSockets', 'Microsoft Azure'],
+    keyword: 'sistema de control de acceso vehicular y gestión de estacionamientos',
+    demoUrl: 'https://its-parkos.vercel.app/login',
+  },
 ]
 
 export function getServiceBySlug(slug: string): Service | undefined {

@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-vue-next'
 import { site } from '~/data/site'
 
 const message = encodeURIComponent(
-  'Hola, vengo desde el sitio web y me gustaría más información sobre sus servicios.',
+  `Hola, visité el sitio web de ${site.name} y me gustaría más información sobre sus servicios.`,
 )
 const href = `${site.contact.whatsappHref}?text=${message}`
 </script>

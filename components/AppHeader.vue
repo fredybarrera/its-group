@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Menu, X, ArrowRight, Phone } from 'lucide-vue-next'
-import { mainNav } from '~/data/site'
+import { mainNav, site } from '~/data/site'
 
 const route = useRoute()
 const mobileOpen = ref(false)
@@ -40,12 +40,11 @@ function isActive(to: string) {
           <span class="font-semibold text-accent-400">Microsoft Azure</span>
         </p>
         <a
-          href="tel:+56000000000"
+          :href="site.contact.phoneHref"
           class="hidden items-center gap-1.5 text-xs text-slate-400 transition-colors hover:text-white sm:flex"
         >
           <Phone class="h-3 w-3" />
-          <!-- [REEMPLAZAR: número real de contacto] -->
-          +56 9 XXXX XXXX
+          {{ site.contact.phone }}
         </a>
       </div>
     </div>

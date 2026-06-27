@@ -70,10 +70,7 @@ const year = new Date().getFullYear()
             </li>
             <li class="flex items-start gap-3">
               <MapPin class="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
-              <span>
-                {{ site.contact.addressLine }}<br >
-                {{ site.contact.city }}, {{ site.contact.country }}
-              </span>
+              <span>{{ site.contact.addressLine }}, {{ site.contact.city }}, {{ site.contact.country }}</span>
             </li>
           </ul>
         </div>

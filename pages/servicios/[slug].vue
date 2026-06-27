@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, Check, Building2, Cpu } from 'lucide-vue-next'
+import { ArrowRight, Check, Building2, Cpu, MonitorPlay } from 'lucide-vue-next'
 import { services, getServiceBySlug } from '~/data/services'
 import { site } from '~/data/site'
 
@@ -66,6 +66,16 @@ useHead({
           Cotiza este servicio
           <ArrowRight class="h-5 w-5" />
         </NuxtLink>
+        <a
+          v-if="current.demoUrl"
+          :href="current.demoUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10"
+        >
+          <MonitorPlay class="h-4 w-4" />
+          Ver demo en vivo
+        </a>
       </template>
     </PageHero>
 

@@ -10,15 +10,15 @@ export const site: SiteInfo = {
   foundedYear: 2014,
   contact: {
     email: 'contacto@itsgroup.dev', // ⚠️ verificar/ajustar buzón real
-    phone: '+56 2 2345 6789', // ⚠️ ejemplo
-    phoneHref: 'tel:+56223456789',
-    whatsapp: '+56 9 1234 5678', // ⚠️ ejemplo
-    whatsappHref: 'https://wa.me/56912345678',
-    addressLine: 'Av. Apoquindo 4501, Oficina 1203', // ⚠️ ejemplo
-    city: 'Las Condes, Santiago',
-    region: 'Región Metropolitana',
+    phone: '+56 9 3177 8243',
+    phoneHref: 'tel:+56931778243',
+    whatsapp: '+56 9 3177 8243',
+    whatsappHref: 'https://wa.me/56931778243',
+    addressLine: 'Talcahuano',
+    city: 'Bío Bío',
+    region: 'Bío Bío',
     country: 'Chile',
-    mapsQuery: 'Av. Apoquindo 4501, Las Condes, Santiago, Chile',
+    mapsQuery: 'Talcahuano, Bío Bío, Chile',
   },
   social: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/itsolutionsgroup' }, // ⚠️ ejemplo

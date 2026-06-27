@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Mail, Phone, MapPin, MessageCircle, CalendarCheck, Clock } from 'lucide-vue-next'
+import { Mail, MapPin, MessageCircle, CalendarCheck, Clock } from 'lucide-vue-next'
 import { site } from '~/data/site'
 
 useSeo({
@@ -10,16 +10,13 @@ useSeo({
 })
 
 const whatsappHref = `${site.contact.whatsappHref}?text=${encodeURIComponent(
-  'Hola, vengo desde el sitio web y me gustaría más información sobre sus servicios.',
+  `Hola, visité el sitio web de ${site.name} y me gustaría más información sobre sus servicios.`,
 )}`
 
-const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
-  site.contact.mapsQuery,
-)}&z=15&output=embed`
+const mapSrc = `https://maps.google.com/maps?q=-36.7208,-73.1177&z=14&output=embed`
 
 const contactItems = [
   { icon: Mail, label: 'Email', value: site.contact.email, href: `mailto:${site.contact.email}` },
-  { icon: Phone, label: 'Teléfono', value: site.contact.phone, href: site.contact.phoneHref },
   { icon: MessageCircle, label: 'WhatsApp', value: site.contact.whatsapp, href: whatsappHref },
 ]
 
@@ -151,9 +148,6 @@ const calendlyUrl = useRuntimeConfig().public.calendlyUrl
             referrerpolicy="no-referrer-when-downgrade"
           />
         </div>
-        <p class="mt-2 text-center text-xs text-slate-400">
-          ⚠️ Dirección de ejemplo — actualizar por la ubicación real.
-        </p>
       </div>
     </section>
   </div>
