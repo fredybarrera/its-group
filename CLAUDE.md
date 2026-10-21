@@ -41,10 +41,14 @@ conversión principal es **solicitar cotización** o **agendar una reunión**.
 - **Estado:** Pinia (`@pinia/nuxt`) solo si se necesita estado compartido
 - **Blog:** `@nuxt/content` (artículos en Markdown)
 - **Imágenes:** `@nuxt/image` (`<NuxtImg>`)
-- **Iconos:** lucide-vue-next o nuxt-icon
+- **Fuentes:** `@nuxt/fonts` (Inter y Sora servidas desde el propio sitio). Fijado en 0.11.x: la 0.12+
+  depende de `@nuxt/kit` 4 (Nuxt 4). No vuelvas a enlazar la hoja de Google Fonts: bloquea el render.
+- **Iconos:** lucide-vue-next, importando cada ícono por nombre. Nunca `import * as icons`: envía la
+  biblioteca completa (~500 KB) a cada página. Los íconos de servicios se registran en el mapa de
+  `components/ServiceIcon.vue`; si un servicio usa un ícono nuevo, agrégalo ahí.
 - **Calidad:** ESLint + Prettier configurados desde el inicio
 - **Gestor de paquetes:** npm
-- **Despliegue objetivo:** Azure Static Web Apps con GitHub Actions (preset `azure` de Nitro)
+- **Despliegue objetivo:** Azure Static Web Apps con GitHub Actions (preset `azure-swa` de Nitro)
 
 > No agregues dependencias fuera de esta lista sin proponerlo y justificarlo primero.
 > Prioriza soluciones nativas de Nuxt/Vue.
@@ -74,11 +78,11 @@ conversión principal es **solicitar cotización** o **agendar una reunión**.
 
 ## Estructura de páginas
 
-- `/` — Inicio (hero, propuesta de valor, certificaciones, servicios resumidos, casos de éxito, testimonios, CTA)
+- `/` — Inicio (hero, especialidades, servicios resumidos, casos de éxito, CTA; métricas y testimonios ocultos)
 - `/servicios` — Índice de servicios
 - `/servicios/[slug]` — Página individual por servicio (8 en total)
 - `/portafolio` — Casos de éxito filtrables (Problema → Solución → Resultado)
-- `/nosotros` — Empresa, certificaciones, equipo, metodología
+- `/nosotros` — Empresa, especialidades, valores, metodología (equipo oculto)
 - `/blog` y `/blog/[slug]` — Centro de conocimiento
 - `/contacto` — Formulario inteligente + agendar reunión + WhatsApp
 
@@ -96,8 +100,9 @@ URLs siempre semánticas y en español (ej. `/servicios/gis-arcgis`).
   nombres o códigos de sitios y coordenadas.
 - Demo protegida con contraseña: `liveUrlRequiresAccess` (caso) o `demoRequiresAccess` (servicio)
   cambian el botón por "Solicitar acceso a la demo", que abre `/contacto` con el formulario prellenado.
-- Imágenes: `cover` en 1200×630 (SVG o WebP) y `ogImage` en PNG 1200×630 bajo `public/og/`, porque las
-  redes sociales no muestran SVG. Mantén cada PNG bajo ~300 KB para que WhatsApp genere la vista previa.
+- Imágenes: `cover` en 1200×630 (SVG o WebP). Toda portada raster lleva una variante de 800 px con el
+  sufijo `-800` (`parkos.webp` → `parkos-800.webp`), que `coverSrcset()` usa en el `srcset` de las
+  tarjetas. `ogImage` va en PNG 1200×630 bajo `public/og/`, porque las redes sociales no muestran SVG. Mantén cada PNG bajo ~300 KB para que WhatsApp genere la vista previa.
   `public/og-image.svg` es la fuente editable de `public/og/og-image.png`; regenera el PNG si cambia.
 - Métricas, testimonios y equipo están ocultos hasta tener datos reales: `sectionVisibility` en
   `data/site.ts`.
@@ -106,12 +111,21 @@ URLs siempre semánticas y en español (ej. `/servicios/gis-arcgis`).
 
 ## SEO y rendimiento (obligatorio)
 
-- Metadatos por página con `useSeoMeta()` / `useHead()` de Nuxt: `title`, `description`, Open Graph.
+- Metadatos por página con `useSeo()` (`composables/useSeo.ts`): `title`, `description`, canonical y
+  Open Graph. La plantilla de `app.vue` agrega " | IT Solutions Group" solo si el total queda en ≤ 60
+  caracteres; si no, el título va sin sufijo para que Google no lo corte.
+- Cada servicio tiene `seoTitle` (≤ 45 caracteres, con la palabra clave integrada de forma natural) y
+  `seoDescription` (120–160 caracteres). No repitas la palabra clave en el título.
 - Datos estructurados Schema.org (Organization, LocalBusiness, Service).
 - Imágenes optimizadas con `<NuxtImg>` (`@nuxt/image`) y `alt` descriptivo siempre.
-- `sitemap.xml` y `robots.txt`.
+- `sitemap.xml` (`server/routes/sitemap.xml.ts`, sin `<lastmod>`: la fecha del build no es real) y
+  `robots.txt` apuntando a `https://www.itsgroup.dev`, el dominio canónico.
+- URLs sin barra final: `trailingSlash: "never"` en `public/staticwebapp.config.json` redirige `/ruta/`.
 - Mobile-first y totalmente responsive.
-- Accesibilidad básica: contraste suficiente, navegación por teclado, etiquetas semánticas.
+- Accesibilidad básica: contraste AA (ver Diseño), navegación por teclado, etiquetas semánticas.
+  El nombre accesible de un enlace debe contener su texto visible.
+- Search Console: propiedad de dominio `itsgroup.dev`, con el sitemap enviado. Tras un cambio de
+  rendimiento, mide con Lighthouse en móvil sobre producción, no solo en local.
 
 **Palabras clave a integrar naturalmente:** desarrollo de software a medida Chile,
 consultoría ArcGIS Chile, soluciones GIS, sistemas de gestión empresarial,
@@ -122,7 +136,11 @@ asesoría Azure Chile, aplicaciones educativas, consultoría informática.
 ## Diseño
 
 - Estética moderna, profesional y tecnológica. Evita verse como plantilla genérica.
-- Paleta: [DEFINIR COLORES DE MARCA / HEX]. Mantén consistencia vía tokens de Tailwind.
+- Paleta en `tailwind.config.ts`: `brand` (esmeralda, primario), `accent` (ámbar), `navy` (`#0D1B2A`,
+  fondos oscuros) e `ink`. Mantén consistencia vía esos tokens.
+- Contraste AA sobre fondo claro: texto o fondo de botón verde desde `brand-700` (el `brand-600` da
+  3,8:1); rótulos ámbar en `accent-700`; el botón ámbar (`btn-accent`) lleva texto `navy`, no blanco;
+  textos grises desde `slate-500`. Sobre `navy`, usa los tonos claros (`brand-400`, `slate-300/400`).
 - Jerarquía tipográfica clara, espaciado generoso, contenido escaneable.
 - Animaciones sutiles al hacer scroll y microinteracciones; sin sobrecargar.
 
@@ -131,8 +149,14 @@ asesoría Azure Chile, aplicaciones educativas, consultoría informática.
 ## Despliegue (Azure Static Web Apps + GitHub Actions)
 
 - El sitio se despliega en **Azure Static Web Apps** vía **GitHub Actions** (push a la rama principal).
-- Usa el preset `azure` de Nitro (Nuxt lo activa solo en el entorno de GitHub Actions). Nitro genera `staticwebapp.config.json` automáticamente con este preset.
-- Rutas del workflow: `app_location: "/"`, `api_location: ".output/server"`, `output_location: ".output/public"`.
+- Preset `azure-swa` de Nitro (fijado en `nuxt.config.ts`). El workflow compila con `npm ci` y
+  `npm run build` en **Node 20 / npm 10** y luego despliega lo generado:
+  `app_location: ".output/public"`, `api_location: ".output/server"`, `output_location: ""`.
+- `public/staticwebapp.config.json` se copia tal cual al build: ahí van `trailingSlash`, cabeceras y la
+  caché de un año (`immutable`) para `/_nuxt/*` y `/_fonts/*`, que llevan hash en el nombre.
+- Si cambias dependencias, regenera el lockfile con npm 10 (`npx npm@10 install ...`): uno generado con
+  npm 11 hace fallar `npm ci` en el workflow.
+- Cada pull request a `main` despliega una vista previa en Azure; producción cambia con el merge.
 - Workflow en `.github/workflows/azure-static-web-apps.yml` con la acción `Azure/static-web-apps-deploy@v1`.
 - El token va como secreto del repo: `${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}`. **Nunca** en el código.
 - Prerenderiza las páginas estáticas (`routeRules` / `nitro.prerender`) para SEO y velocidad.
@@ -159,13 +183,16 @@ npx @azure/static-web-apps-cli start .output/public --api-location .output/serve
 
 > Antes de dar una tarea por terminada, ejecuta `npm run build` y `npm run lint`
 > y corrige cualquier error.
+>
+> Si el build se queda detenido en "Building Nuxt Nitro server" después del prerender, cierra los
+> `nuxi dev` que sigan vivos y borra `.nuxt` y `.output` (ambos se regeneran).
 
 ---
 
 ## Flujo de trabajo esperado
 
 - Trabaja por fases, no todo de una vez: (1) base + Home, (2) plantilla de servicio
-  + las 6 páginas, (3) portafolio/blog/contacto, (4) SEO técnico.
+  + las páginas de servicio, (3) portafolio/blog/contacto, (4) SEO técnico.
 - Antes de cambios grandes, propón brevemente el plan y espera confirmación.
 - Tras cada fase, deja el proyecto en estado funcional y compilable.
 

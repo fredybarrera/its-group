@@ -8,6 +8,7 @@ readTime: 5
 image: 'from-brand-800 to-brand-500'
 cover: '/blog/elegir-sistema-de-gestion-erp.svg'
 ogImage: '/og/blog/elegir-sistema-de-gestion-erp.png'
+service: 'sistemas-de-gestion'
 imageAlt: 'Ilustración de un sistema de gestión modular con inventario, ventas, compras y personas conectados a un núcleo común'
 author: 'Equipo IT Solutions Group'
 ---

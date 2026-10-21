@@ -4,7 +4,7 @@ import { sectionVisibility } from '~/data/site'
 useSeo({
   title: 'Desarrollo de software a medida y consultoría TI en Chile',
   description:
-    'IT Solutions Group: desarrollo de software a medida, soluciones GIS/ArcGIS, sistemas de gestión y asesoría Azure en Chile. Especialistas en GIS con ArcGIS de Esri y en Microsoft Azure.',
+    'Desarrollo de software a medida en Chile desde Talcahuano, Región del Biobío: sistemas de gestión, GIS con ArcGIS de Esri, analítica de datos y Azure.',
   path: '/',
 })
 </script>

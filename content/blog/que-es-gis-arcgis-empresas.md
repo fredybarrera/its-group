@@ -8,6 +8,7 @@ readTime: 6
 image: 'from-brand-700 to-accent-500'
 cover: '/blog/que-es-gis-arcgis-empresas.svg'
 ogImage: '/og/blog/que-es-gis-arcgis-empresas.png'
+service: 'gis-arcgis'
 imageAlt: 'Ilustración de capas de un sistema de información geográfica: relieve, calles y predios, y puntos de interés'
 author: 'Equipo IT Solutions Group'
 ---

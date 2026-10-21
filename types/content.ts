@@ -17,6 +17,16 @@ export interface SiteContact {
   region: string
   country: string
   mapsQuery: string
+  hours: OpeningHours
+}
+
+export interface OpeningHours {
+  /** Texto visible, ej. "Lun a Vie · 9:00 – 18:00". */
+  label: string
+  /** Días en inglés de Schema.org (Monday…Sunday). */
+  days: string[]
+  opens: string
+  closes: string
 }
 
 export interface SiteInfo {

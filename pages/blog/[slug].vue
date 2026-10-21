@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { Clock, ArrowLeft, CalendarDays } from 'lucide-vue-next'
+import { Clock, ArrowLeft, ArrowRight, CalendarDays } from 'lucide-vue-next'
 import { site } from '~/data/site'
+import { getServiceBySlug } from '~/data/services'
+import { caseStudies } from '~/data/portfolio'
 
 const route = useRoute()
 const slug = computed(() => route.params.slug as string)
@@ -24,8 +26,17 @@ const article = doc.value as typeof doc.value & {
   cover?: string
   imageAlt?: string
   ogImage?: string
+  /** Slug del servicio relacionado, para enlazarlo desde el artículo. */
+  service?: string
+  /** Fecha de la última revisión del contenido (AAAA-MM-DD). */
+  updated?: string
   author: string
 }
+
+const relatedService = article.service ? getServiceBySlug(article.service) : undefined
+const relatedCases = relatedService
+  ? caseStudies.filter((c) => c.serviceSlug === relatedService.slug).slice(0, 2)
+  : []
 
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl.replace(/\/$/, '')
@@ -48,8 +59,11 @@ useHead({
         headline: article.title,
         description: article.description,
         datePublished: article.date,
+        dateModified: article.updated ?? article.date,
+        ...(article.ogImage ? { image: absoluteUrl(siteUrl, article.ogImage) } : {}),
+        inLanguage: 'es-CL',
         author: { '@type': 'Organization', name: article.author ?? site.name },
-        publisher: { '@type': 'Organization', name: site.name, url: siteUrl },
+        publisher: { '@id': organizationId(siteUrl) },
         mainEntityOfPage: `${siteUrl}${path.value}`,
       }),
     },
@@ -115,6 +129,30 @@ function formatDate(date: string) {
         <div class="article-content mt-10">
           <ContentRenderer :value="doc" />
         </div>
+
+        <!-- Enlaces internos: servicio y casos relacionados -->
+        <aside v-if="relatedService" class="mt-12 space-y-8" aria-label="Contenido relacionado">
+          <NuxtLink
+            :to="`/servicios/${relatedService.slug}`"
+            class="group flex items-center gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-colors hover:border-brand-200"
+          >
+            <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              <ServiceIcon :name="relatedService.icon" class="h-5 w-5" />
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-slate-500">Servicio relacionado</span>
+              <span class="block font-bold text-navy group-hover:text-brand-700">{{ relatedService.title }}</span>
+            </span>
+            <ArrowRight class="h-5 w-5 text-brand-700 transition-transform group-hover:translate-x-1" />
+          </NuxtLink>
+
+          <div v-if="relatedCases.length">
+            <h2 class="text-xl font-bold text-navy">Proyectos relacionados</h2>
+            <div class="mt-5 grid gap-6 sm:grid-cols-2">
+              <CaseStudyCard v-for="item in relatedCases" :key="item.slug" :case-study="item" />
+            </div>
+          </div>
+        </aside>
 
         <div class="mt-12 border-t border-slate-100 pt-6">
           <NuxtLink
