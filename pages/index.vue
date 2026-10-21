@@ -16,7 +16,7 @@ useSeo({
     <!-- Banda de certificaciones / alianzas -->
     <section class="border-b border-slate-100 bg-white py-10">
       <div class="container">
-        <p class="mb-5 text-center text-sm font-medium uppercase tracking-widest text-slate-400">
+        <p class="mb-5 text-center text-sm font-medium uppercase tracking-widest text-slate-500">
           Nuestras especialidades
         </p>
         <CertificationBand />

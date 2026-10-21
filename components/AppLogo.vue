@@ -38,7 +38,7 @@ withDefaults(defineProps<{ light?: boolean }>(), { light: false })
       </span>
       <span
         class="font-sans text-[0.6rem] font-semibold uppercase tracking-[0.2em]"
-        :class="light ? 'text-brand-400' : 'text-brand-600'"
+        :class="light ? 'text-brand-400' : 'text-brand-700'"
       >
         Group
       </span>

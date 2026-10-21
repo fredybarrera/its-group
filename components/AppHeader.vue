@@ -59,7 +59,7 @@ function isActive(to: string) {
       "
     >
       <div class="container flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
-        <NuxtLink to="/" aria-label="Ir al inicio" class="shrink-0">
+        <NuxtLink to="/" aria-label="IT Solutions Group, ir al inicio" class="shrink-0">
           <AppLogo />
         </NuxtLink>
 
@@ -90,7 +90,7 @@ function isActive(to: string) {
         <div class="hidden items-center gap-3 lg:flex">
           <NuxtLink
             to="/contacto"
-            class="inline-flex items-center gap-2 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-700 hover:shadow-md"
+            class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-800 hover:shadow-md"
           >
             Cotiza tu proyecto
             <ArrowRight class="h-4 w-4" />

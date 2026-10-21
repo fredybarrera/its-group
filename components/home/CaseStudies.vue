@@ -15,7 +15,7 @@ import { featuredCaseStudies } from '~/data/portfolio'
         />
         <NuxtLink
           to="/portafolio"
-          class="hidden shrink-0 items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-accent-600 sm:inline-flex"
+          class="hidden shrink-0 items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-accent-700 sm:inline-flex"
         >
           Ver portafolio
           <ArrowRight class="h-4 w-4" />

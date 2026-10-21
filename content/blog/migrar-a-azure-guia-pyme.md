@@ -1,4 +1,5 @@
 ---
+# ⚠️ Texto base (~200 palabras): ampliar con contenido editorial propio.
 title: 'Migrar a Azure: guía práctica para empresas en Chile'
 description: 'Qué considerar antes de migrar tu infraestructura a Microsoft Azure: beneficios, riesgos comunes y cómo optimizar costos desde el primer día.'
 date: '2025-12-05'
@@ -10,8 +11,6 @@ ogImage: '/og/blog/migrar-a-azure-guia-pyme.png'
 imageAlt: 'Ilustración de una ruta de migración por etapas desde servidores propios hacia la nube, con seguridad y control de costos'
 author: 'Equipo IT Solutions Group'
 ---
-
-> ⚠️ Artículo de ejemplo. Reemplazar por contenido editorial real.
 
 Migrar a la nube ya no es una pregunta de *si*, sino de *cómo*. **Microsoft Azure**
 ofrece escalabilidad, seguridad y un modelo de costos flexible, pero una migración

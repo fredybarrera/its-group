@@ -84,7 +84,7 @@ function formatDate(date: string) {
               class="rounded-full border px-4 py-1.5 text-sm font-medium transition-colors"
               :class="
                 activeCategory === category
-                  ? 'border-brand-600 bg-brand-600 text-white'
+                  ? 'border-brand-600 bg-brand-700 text-white'
                   : 'border-slate-200 bg-white text-slate-600 hover:border-brand-300'
               "
               @click="activeCategory = category"
@@ -126,15 +126,15 @@ function formatDate(date: string) {
                   {{ article.readTime }} min
                 </span>
               </div>
-              <h2 class="mt-3 text-lg font-bold text-navy group-hover:text-brand-600">
+              <h2 class="mt-3 text-lg font-bold text-navy group-hover:text-brand-700">
                 {{ article.title }}
               </h2>
               <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
                 {{ article.description }}
               </p>
               <div class="mt-4 flex items-center justify-between">
-                <time class="text-xs text-slate-400">{{ formatDate(article.date) }}</time>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
+                <time class="text-xs text-slate-500">{{ formatDate(article.date) }}</time>
+                <span class="inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
                   Leer
                   <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>

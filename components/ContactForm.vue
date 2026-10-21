@@ -179,7 +179,7 @@ async function onSubmit() {
         {{ status === 'sending' ? 'Enviando…' : 'Enviar solicitud' }}
       </button>
 
-      <p class="text-center text-xs text-slate-400">
+      <p class="text-center text-xs text-slate-500">
         Al enviar aceptas ser contactado por nuestro equipo comercial.
       </p>
     </form>

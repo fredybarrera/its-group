@@ -44,7 +44,7 @@ useHead({
           v-if="item.to"
           :to="item.to"
           class="transition-colors"
-          :class="light ? 'hover:text-accent-300' : 'hover:text-brand-600'"
+          :class="light ? 'hover:text-accent-300' : 'hover:text-brand-700'"
         >
           {{ item.label }}
         </NuxtLink>

@@ -1,4 +1,5 @@
 ---
+# ⚠️ Texto base (~200 palabras): ampliar con contenido editorial propio.
 title: 'Cómo elegir un sistema de gestión (ERP) a la medida de tu empresa'
 description: 'Software estándar o a medida: claves para elegir un sistema de gestión empresarial que se adapte a tus procesos y crezca con tu negocio.'
 date: '2026-01-15'
@@ -10,8 +11,6 @@ ogImage: '/og/blog/elegir-sistema-de-gestion-erp.png'
 imageAlt: 'Ilustración de un sistema de gestión modular con inventario, ventas, compras y personas conectados a un núcleo común'
 author: 'Equipo IT Solutions Group'
 ---
-
-> ⚠️ Artículo de ejemplo. Reemplazar por contenido editorial real.
 
 Un **sistema de gestión empresarial** bien elegido ordena tu operación; uno mal
 elegido la entorpece. La gran decisión suele ser: ¿software estándar o a medida?

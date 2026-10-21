@@ -22,14 +22,16 @@ export default defineEventHandler(async (event) => {
   }
 
   const urls = [...staticRoutes, ...serviceRoutes, ...caseRoutes, ...blogRoutes]
-  const today = new Date().toISOString().split('T')[0]
+
+  // Sin <lastmod>: la fecha del build no refleja cuándo cambió cada página, y
+  // Google descarta las fechas poco confiables.
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
   .map(
     (url) =>
-      `  <url>\n    <loc>${base}${url === '/' ? '' : url}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`,
+      `  <url>\n    <loc>${base}${url === '/' ? '' : url}</loc>\n  </url>`,
   )
   .join('\n')}
 </urlset>`

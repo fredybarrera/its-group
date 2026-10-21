@@ -9,7 +9,7 @@ import { metrics } from '~/data/site'
         <div v-for="metric in metrics" :key="metric.label" v-reveal class="text-center">
           <dt class="sr-only">{{ metric.label }}</dt>
           <dd>
-            <p class="text-4xl font-extrabold text-brand-600 lg:text-5xl">{{ metric.value }}</p>
+            <p class="text-4xl font-extrabold text-brand-700 lg:text-5xl">{{ metric.value }}</p>
             <p class="mt-2 text-sm font-medium text-slate-600">{{ metric.label }}</p>
           </dd>
         </div>

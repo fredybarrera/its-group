@@ -1,4 +1,5 @@
 ---
+# ⚠️ Texto base (~200 palabras): ampliar con contenido editorial propio.
 title: 'Qué es GIS y cómo ArcGIS ayuda a las empresas chilenas'
 description: 'Una introducción práctica a los sistemas de información geográfica (GIS) y cómo la tecnología ArcGIS de Esri genera valor en municipios, utilities y empresas.'
 date: '2025-11-20'
@@ -10,8 +11,6 @@ ogImage: '/og/blog/que-es-gis-arcgis-empresas.png'
 imageAlt: 'Ilustración de capas de un sistema de información geográfica: relieve, calles y predios, y puntos de interés'
 author: 'Equipo IT Solutions Group'
 ---
-
-> ⚠️ Artículo de ejemplo. Reemplazar por contenido editorial real.
 
 Los **sistemas de información geográfica (GIS)** permiten capturar, analizar y
 visualizar datos asociados a una ubicación. En la práctica, transforman tablas y

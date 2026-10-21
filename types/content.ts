@@ -52,6 +52,10 @@ export interface Service {
   icon: IconName
   category: string
   title: string
+  /** Título para buscadores, sin el sufijo de marca (idealmente ≤ 45 caracteres). */
+  seoTitle: string
+  /** Meta description, 120–160 caracteres. */
+  seoDescription: string
   shortDescription: string
   /** Descripción larga para la página individual. */
   longDescription: string
