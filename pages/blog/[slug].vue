@@ -21,6 +21,9 @@ const article = doc.value as typeof doc.value & {
   category: string
   readTime: number
   image: string
+  cover?: string
+  imageAlt?: string
+  ogImage?: string
   author: string
 }
 
@@ -31,6 +34,7 @@ useSeo({
   title: article.title,
   description: article.description,
   path: path.value,
+  image: article.ogImage,
   type: 'article',
 })
 
@@ -57,6 +61,7 @@ function formatDate(date: string) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   })
 }
 </script>
@@ -93,7 +98,14 @@ function formatDate(date: string) {
           <span>{{ article.author }}</span>
         </div>
 
+        <NuxtImg
+          v-if="article.cover"
+          :src="article.cover"
+          :alt="article.imageAlt ?? article.title"
+          class="mt-6 aspect-[1200/630] w-full rounded-2xl object-cover"
+        />
         <div
+          v-else
           class="mt-6 aspect-[21/9] w-full rounded-2xl bg-gradient-to-br"
           :class="article.image"
           role="img"

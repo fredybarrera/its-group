@@ -17,7 +17,7 @@ const year = new Date().getFullYear()
           </p>
           <div class="mt-5 flex flex-wrap gap-2">
             <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white">
-              Esri Partner
+              GIS · ArcGIS
             </span>
             <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white">
               Microsoft Azure

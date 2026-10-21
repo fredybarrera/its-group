@@ -24,7 +24,7 @@ export function useSeo(options: SeoOptions) {
     ? options.image.startsWith('http')
       ? options.image
       : `${siteUrl}${options.image}`
-    : `${siteUrl}/og-image.svg`
+    : `${siteUrl}/og/og-image.png`
 
   useSeoMeta({
     title: options.title,

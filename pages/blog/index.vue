@@ -16,11 +16,13 @@ interface ArticlePreview {
   category: string
   readTime: number
   image: string
+  cover?: string
+  imageAlt?: string
 }
 
 const { data: articles } = await useAsyncData('blog-list', () =>
   queryContent<ArticlePreview>('blog')
-    .only(['_path', 'title', 'description', 'date', 'category', 'readTime', 'image'])
+    .only(['_path', 'title', 'description', 'date', 'category', 'readTime', 'image', 'cover', 'imageAlt'])
     .sort({ date: -1 })
     .find(),
 )
@@ -48,6 +50,7 @@ function formatDate(date: string) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   })
 }
 </script>
@@ -99,8 +102,16 @@ function formatDate(date: string) {
             :to="article._path"
             class="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
+            <NuxtImg
+              v-if="article.cover"
+              :src="article.cover"
+              :alt="article.imageAlt ?? article.title"
+              class="aspect-[1200/630] w-full object-cover"
+              loading="lazy"
+            />
             <div
-              class="aspect-[16/9] bg-gradient-to-br"
+              v-else
+              class="aspect-[1200/630] bg-gradient-to-br"
               :class="article.image"
               role="img"
               :aria-label="article.title"

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1B2A" />
+      <stop offset="1" stop-color="#064e3b" />
+    </linearGradient>
+    <radialGradient id="glow" cx="620" cy="320" r="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10b981" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#10b981" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Curvas de nivel -->
+  <g stroke="#34d399" stroke-opacity="0.22" stroke-width="1.5">
+    <path d="M-50 140 C200 60 380 220 600 130 S980 40 1250 150" />
+    <path d="M-50 190 C200 110 380 270 600 180 S980 90 1250 200" />
+    <path d="M-50 470 C220 400 400 560 640 470 S1000 380 1250 490" />
+    <path d="M-50 520 C220 450 400 610 640 520 S1000 430 1250 540" />
+  </g>
+
+  <!-- Manzanas / predios catastrales -->
+  <g stroke="#34d399" stroke-width="2" stroke-linejoin="round">
+    <path d="M300 230 L470 215 L485 330 L310 345 Z" fill="#10b981" fill-opacity="0.10" />
+    <path d="M495 212 L640 200 L652 318 L508 328 Z" fill="#10b981" fill-opacity="0.22" />
+    <path d="M662 198 L820 186 L836 300 L674 316 Z" fill="#10b981" fill-opacity="0.08" />
+    <path d="M316 365 L488 350 L500 450 L328 466 Z" fill="#10b981" fill-opacity="0.16" />
+    <path d="M512 348 L656 338 L668 438 L522 448 Z" fill="#f59e0b" fill-opacity="0.30" stroke="#fbbf24" />
+    <path d="M678 336 L842 322 L856 424 L690 436 Z" fill="#10b981" fill-opacity="0.12" />
+    <path d="M842 186 L900 182 L916 420 L872 424 Z" fill="#10b981" fill-opacity="0.05" />
+  </g>
+  <!-- Subdivisión de predios -->
+  <g stroke="#34d399" stroke-opacity="0.45" stroke-width="1">
+    <path d="M390 222 L400 338 M540 208 L552 324 M596 204 L608 321 M740 192 L756 308" />
+    <path d="M405 358 L416 458 M760 329 L773 430" />
+  </g>
+
+  <!-- Pin seleccionado -->
+  <g transform="translate(590 300)">
+    <circle cx="0" cy="92" r="26" stroke="#fbbf24" stroke-opacity="0.5" stroke-width="2" />
+    <circle cx="0" cy="92" r="46" stroke="#fbbf24" stroke-opacity="0.25" stroke-width="1.5" />
+    <path d="M0 92 C-8 70 -30 52 -30 28 A30 30 0 0 1 30 28 C30 52 8 70 0 92 Z" fill="#f59e0b" />
+    <circle cx="0" cy="28" r="11" fill="#0D1B2A" />
+  </g>
+  <!-- Pines secundarios -->
+  <g fill="#34d399">
+    <circle cx="380" cy="280" r="7" /><circle cx="740" cy="250" r="7" /><circle cx="420" cy="410" r="7" /><circle cx="770" cy="380" r="7" />
+  </g>
+
+  <!-- Ficha del predio -->
+  <g transform="translate(860 120)">
+    <rect width="220" height="150" rx="16" fill="#0D1B2A" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.12" />
+    <rect x="20" y="22" width="90" height="10" rx="5" fill="#fbbf24" />
+    <rect x="20" y="52" width="180" height="8" rx="4" fill="#ffffff" fill-opacity="0.25" />
+    <rect x="20" y="72" width="140" height="8" rx="4" fill="#ffffff" fill-opacity="0.18" />
+    <rect x="20" y="92" width="160" height="8" rx="4" fill="#ffffff" fill-opacity="0.18" />
+    <rect x="20" y="118" width="70" height="14" rx="7" fill="#10b981" fill-opacity="0.35" />
+  </g>
+
+  <!-- Controles de capas -->
+  <g transform="translate(130 120)">
+    <rect width="56" height="168" rx="14" fill="#0D1B2A" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.12" />
+    <rect x="16" y="18" width="24" height="24" rx="6" fill="#10b981" />
+    <rect x="16" y="56" width="24" height="24" rx="6" fill="#ffffff" fill-opacity="0.18" />
+    <rect x="16" y="94" width="24" height="24" rx="6" fill="#ffffff" fill-opacity="0.18" />
+    <rect x="16" y="132" width="24" height="24" rx="6" fill="#ffffff" fill-opacity="0.18" />
+  </g>
+</svg>

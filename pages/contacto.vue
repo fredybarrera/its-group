@@ -34,7 +34,7 @@ const calendlyUrl = useRuntimeConfig().public.calendlyUrl
     <section class="section bg-white">
       <div class="container grid gap-10 lg:grid-cols-5">
         <!-- Formulario -->
-        <div class="lg:col-span-3">
+        <div id="formulario" class="scroll-mt-24 lg:col-span-3">
           <ContactForm />
         </div>
 

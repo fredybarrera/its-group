@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { Target, Eye, Heart } from 'lucide-vue-next'
-import { site, metrics } from '~/data/site'
+import { site, metrics, sectionVisibility } from '~/data/site'
 import { team, methodology } from '~/data/team'
 
 useSeo({
   title: 'Nosotros — Por qué elegirnos',
   description:
-    'Conoce a IT Solutions Group: empresa chilena de desarrollo de software, Partner oficial de Esri y especialistas en Azure. Nuestra historia, equipo y metodología.',
+    'Conoce a IT Solutions Group: empresa chilena de desarrollo de software, especialistas en GIS con ArcGIS de Esri y en Azure. Nuestra historia, certificaciones y metodología.',
   path: '/nosotros',
 })
 
@@ -39,7 +39,10 @@ const values = [
 
     <!-- Historia -->
     <section class="section bg-white">
-      <div class="container grid items-center gap-12 lg:grid-cols-2">
+      <div
+        class="container grid items-center gap-12"
+        :class="sectionVisibility.metrics ? 'lg:grid-cols-2' : 'max-w-3xl'"
+      >
         <div v-reveal>
           <SectionHeading
             align="left"
@@ -54,13 +57,14 @@ const values = [
               de cómo operan las organizaciones.
             </p>
             <p>
-              Como <strong class="text-navy">Partner oficial de Esri Chile</strong> y especialistas
-              en <strong class="text-navy">Microsoft Azure</strong>, integramos software a medida,
+              Como especialistas en
+              <strong class="text-navy">sistemas de información geográfica con ArcGIS de Esri</strong>
+              y en <strong class="text-navy">Microsoft Azure</strong>, integramos software a medida,
               inteligencia territorial y nube para resolver desafíos que otros consideran complejos.
             </p>
           </div>
         </div>
-        <div v-reveal="120" class="grid grid-cols-2 gap-4">
+        <div v-if="sectionVisibility.metrics" v-reveal="120" class="grid grid-cols-2 gap-4">
           <div
             v-for="metric in metrics"
             :key="metric.label"
@@ -77,7 +81,7 @@ const values = [
     <section class="bg-slate-50 py-14">
       <div class="container">
         <p class="mb-5 text-center text-sm font-medium uppercase tracking-widest text-slate-400">
-          Certificaciones y alianzas
+          Nuestras especialidades
         </p>
         <CertificationBand />
       </div>
@@ -119,7 +123,7 @@ const values = [
     </section>
 
     <!-- Equipo -->
-    <section class="section bg-white">
+    <section v-if="sectionVisibility.team" class="section bg-white">
       <div class="container">
         <SectionHeading
           eyebrow="Equipo"

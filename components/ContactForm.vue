@@ -22,6 +22,18 @@ const form = reactive<FormState>({
   website: '',
 })
 
+// Prellenado desde enlaces como "Solicitar acceso a la demo" (?servicio=slug&demo=1).
+// Se aplica al montar porque /contacto se prerenderiza sin query.
+const route = useRoute()
+onMounted(() => {
+  const preselected = services.find((s) => s.slug === route.query.servicio)
+  if (!preselected) return
+  form.service = preselected.category
+  if (route.query.demo === '1' && !form.message) {
+    form.message = `Hola, me gustaría solicitar acceso a la demo de ${preselected.title}.`
+  }
+})
+
 const status = ref<'idle' | 'sending' | 'success' | 'error'>('idle')
 const errors = ref<Record<string, string>>({})
 const serverMessage = ref('')

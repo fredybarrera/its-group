@@ -11,7 +11,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'Su experiencia como Partner de Esri fue clave. La plataforma ArcGIS nos dio una visión del territorio que antes no teníamos y agilizó la atención ciudadana.',
+      'Su experiencia en ArcGIS fue clave. La plataforma ArcGIS nos dio una visión del territorio que antes no teníamos y agilizó la atención ciudadana.',
     author: 'Director de Planificación', // ⚠️ ejemplo
     role: 'Dirección de Planificación',
     company: 'Municipio Región Metropolitana',

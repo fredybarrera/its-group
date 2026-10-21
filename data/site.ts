@@ -6,7 +6,7 @@ export const site: SiteInfo = {
   legalName: 'IT Solutions Group SpA',
   tagline: 'Desarrollo de software a medida y consultoría tecnológica en Chile',
   description:
-    'Empresa chilena de desarrollo de software a medida y consultoría TI. Partner oficial de Esri Chile (ArcGIS/GIS) y especialistas en Microsoft Azure.',
+    'Empresa chilena de desarrollo de software a medida y consultoría TI. Especialistas en sistemas de información geográfica con ArcGIS de Esri y en Microsoft Azure.',
   foundedYear: 2014,
   contact: {
     email: 'contacto@itsgroup.dev', // ⚠️ verificar/ajustar buzón real
@@ -33,6 +33,13 @@ export const mainNav: NavLink[] = [
   { label: 'Blog', to: '/blog' },
   { label: 'Contacto', to: '/contacto' },
 ]
+
+// Secciones ocultas hasta contar con datos reales; cambiar a `true` para mostrarlas.
+export const sectionVisibility = {
+  metrics: false,
+  testimonials: false,
+  team: false,
+}
 
 // ⚠️ CONTENIDO DE EJEMPLO — métricas representativas del rubro.
 export const metrics: Metric[] = [

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AlertCircle, Lightbulb, TrendingUp, ArrowRight } from 'lucide-vue-next'
+import { AlertCircle, Lightbulb, TrendingUp, ArrowRight, ExternalLink } from 'lucide-vue-next'
 import { caseStudies, getCaseStudyBySlug } from '~/data/portfolio'
 import { getServiceBySlug } from '~/data/services'
 
@@ -19,6 +19,7 @@ useSeo({
   title: current.title,
   description: current.summary,
   path: `/portafolio/${current.slug}`,
+  image: current.ogImage,
   type: 'article',
 })
 
@@ -49,15 +50,55 @@ const blocks = [
     <section class="section bg-white">
       <div class="container max-w-5xl">
         <!-- Imagen / placeholder de marca -->
+        <NuxtImg
+          v-if="current.cover"
+          :src="current.cover"
+          :alt="current.imageAlt"
+          class="aspect-[1200/630] w-full rounded-2xl object-cover"
+        />
         <div
+          v-else
           class="aspect-[21/9] w-full rounded-2xl bg-gradient-to-br"
           :class="current.image"
           role="img"
           :aria-label="current.imageAlt"
         />
 
+        <div
+          v-if="current.liveUrl || current.technologies?.length"
+          class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <ul v-if="current.technologies?.length" class="flex flex-wrap gap-2" aria-label="Tecnologías">
+            <li
+              v-for="tech in current.technologies"
+              :key="tech"
+              class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"
+            >
+              {{ tech }}
+            </li>
+          </ul>
+          <NuxtLink
+            v-if="current.liveUrl && current.liveUrlRequiresAccess"
+            :to="demoAccessRoute(current.serviceSlug)"
+            class="btn-outline shrink-0"
+          >
+            Solicitar acceso a la demo
+            <ArrowRight class="h-4 w-4" />
+          </NuxtLink>
+          <a
+            v-else-if="current.liveUrl"
+            :href="current.liveUrl"
+            target="_blank"
+            rel="noopener"
+            class="btn-outline shrink-0"
+          >
+            Visitar sitio
+            <ExternalLink class="h-4 w-4" />
+          </a>
+        </div>
+
         <!-- Métricas -->
-        <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div v-if="current.metrics.length" class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div
             v-for="metric in current.metrics"
             :key="metric.label"

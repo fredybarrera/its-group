@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#065f46" />
+      <stop offset="1" stop-color="#0D1B2A" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <g fill="#ffffff" fill-opacity="0.05">
+    <circle cx="120" cy="110" r="3" /><circle cx="1080" cy="520" r="3" /><circle cx="1040" cy="90" r="3" /><circle cx="160" cy="540" r="3" />
+  </g>
+
+  <!-- Libro de clases: tabla de asistencia -->
+  <g transform="translate(170 100)">
+    <rect width="560" height="430" rx="22" fill="#0D1B2A" stroke="#ffffff" stroke-opacity="0.12" />
+    <rect x="30" y="30" width="150" height="12" rx="6" fill="#ffffff" fill-opacity="0.6" />
+    <rect x="30" y="54" width="100" height="8" rx="4" fill="#ffffff" fill-opacity="0.25" />
+    <g transform="translate(410 26)">
+      <rect width="120" height="38" rx="19" fill="#10b981" fill-opacity="0.2" />
+      <rect x="20" y="15" width="80" height="8" rx="4" fill="#34d399" />
+    </g>
+    <path d="M30 90 H530" stroke="#ffffff" stroke-opacity="0.1" />
+
+    <g transform="translate(30 110)">
+      <!-- Encabezado de días -->
+      <g fill="#ffffff" fill-opacity="0.3">
+        <rect x="200" width="36" height="8" rx="4" /><rect x="260" width="36" height="8" rx="4" /><rect x="320" width="36" height="8" rx="4" />
+        <rect x="380" width="36" height="8" rx="4" /><rect x="440" width="36" height="8" rx="4" />
+      </g>
+      <!-- Filas de estudiantes -->
+      <g id="row">
+        <circle cx="16" cy="48" r="16" fill="#34d399" fill-opacity="0.35" />
+        <rect x="44" y="44" width="110" height="8" rx="4" fill="#ffffff" fill-opacity="0.3" />
+      </g>
+      <use href="#row" y="58" /><use href="#row" y="116" /><use href="#row" y="174" /><use href="#row" y="232" />
+      <!-- Marcas de asistencia -->
+      <g fill="#10b981">
+        <rect x="204" y="36" width="26" height="26" rx="7" /><rect x="264" y="36" width="26" height="26" rx="7" /><rect x="324" y="36" width="26" height="26" rx="7" /><rect x="384" y="36" width="26" height="26" rx="7" /><rect x="444" y="36" width="26" height="26" rx="7" />
+        <rect x="204" y="94" width="26" height="26" rx="7" /><rect x="264" y="94" width="26" height="26" rx="7" /><rect x="384" y="94" width="26" height="26" rx="7" /><rect x="444" y="94" width="26" height="26" rx="7" />
+        <rect x="204" y="152" width="26" height="26" rx="7" /><rect x="264" y="152" width="26" height="26" rx="7" /><rect x="324" y="152" width="26" height="26" rx="7" /><rect x="384" y="152" width="26" height="26" rx="7" />
+        <rect x="204" y="210" width="26" height="26" rx="7" /><rect x="324" y="210" width="26" height="26" rx="7" /><rect x="384" y="210" width="26" height="26" rx="7" /><rect x="444" y="210" width="26" height="26" rx="7" />
+        <rect x="204" y="268" width="26" height="26" rx="7" /><rect x="264" y="268" width="26" height="26" rx="7" /><rect x="324" y="268" width="26" height="26" rx="7" /><rect x="384" y="268" width="26" height="26" rx="7" /><rect x="444" y="268" width="26" height="26" rx="7" />
+      </g>
+      <g fill="#f59e0b">
+        <rect x="324" y="94" width="26" height="26" rx="7" /><rect x="444" y="152" width="26" height="26" rx="7" /><rect x="264" y="210" width="26" height="26" rx="7" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Tarjeta de evaluación -->
+  <g transform="translate(770 120)">
+    <rect width="260" height="180" rx="20" fill="#0D1B2A" stroke="#ffffff" stroke-opacity="0.12" />
+    <rect x="24" y="26" width="110" height="10" rx="5" fill="#fbbf24" />
+    <g transform="translate(24 62)">
+      <rect width="212" height="10" rx="5" fill="#ffffff" fill-opacity="0.08" /><rect width="180" height="10" rx="5" fill="#34d399" />
+      <rect y="32" width="212" height="10" rx="5" fill="#ffffff" fill-opacity="0.08" /><rect y="32" width="140" height="10" rx="5" fill="#34d399" fill-opacity="0.8" />
+      <rect y="64" width="212" height="10" rx="5" fill="#ffffff" fill-opacity="0.08" /><rect y="64" width="196" height="10" rx="5" fill="#34d399" />
+      <rect y="96" width="212" height="10" rx="5" fill="#ffffff" fill-opacity="0.08" /><rect y="96" width="110" height="10" rx="5" fill="#f59e0b" />
+    </g>
+  </g>
+
+  <!-- Mensaje a apoderados -->
+  <g transform="translate(770 330)">
+    <rect width="260" height="110" rx="20" fill="#10b981" fill-opacity="0.15" stroke="#34d399" stroke-opacity="0.35" />
+    <circle cx="44" cy="55" r="22" fill="#34d399" fill-opacity="0.5" />
+    <path d="M34 48 H54 V62 H42 L36 67 V62 H34 Z" fill="#0D1B2A" fill-opacity="0.8" />
+    <rect x="80" y="38" width="150" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.55" />
+    <rect x="80" y="58" width="110" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.25" />
+  </g>
+
+  <!-- Birrete -->
+  <g transform="translate(860 470)">
+    <path d="M0 20 L40 0 L80 20 L40 40 Z" fill="#fbbf24" />
+    <path d="M18 30 V48 C18 56 62 56 62 48 V30 L40 41 Z" fill="#d97706" />
+    <path d="M74 23 V44" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>

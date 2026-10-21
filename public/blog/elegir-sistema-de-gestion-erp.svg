@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#065f46" />
+      <stop offset="1" stop-color="#0D1B2A" />
+    </linearGradient>
+    <radialGradient id="glow" cx="600" cy="315" r="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34d399" stop-opacity="0.2" />
+      <stop offset="1" stop-color="#34d399" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Conexiones entre el núcleo y los módulos -->
+  <g stroke="#34d399" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="6 7">
+    <path d="M600 315 L360 170" /><path d="M600 315 L840 170" />
+    <path d="M600 315 L330 430" /><path d="M600 315 L870 430" />
+    <path d="M600 315 L600 520" />
+  </g>
+
+  <!-- Núcleo del sistema -->
+  <g transform="translate(600 315)">
+    <circle r="92" fill="#0D1B2A" stroke="#34d399" stroke-width="3" />
+    <circle r="70" stroke="#34d399" stroke-opacity="0.3" stroke-width="2" />
+    <g fill="#34d399">
+      <rect x="-34" y="-34" width="30" height="30" rx="6" />
+      <rect x="4" y="-34" width="30" height="30" rx="6" fill-opacity="0.6" />
+      <rect x="-34" y="4" width="30" height="30" rx="6" fill-opacity="0.6" />
+    </g>
+    <!-- Pieza que encaja: la parte a medida -->
+    <rect x="4" y="4" width="30" height="30" rx="6" fill="#f59e0b" />
+  </g>
+
+  <!-- Módulo: inventario -->
+  <g transform="translate(280 110)">
+    <rect width="160" height="120" rx="18" fill="#0D1B2A" stroke="#ffffff" stroke-opacity="0.15" />
+    <g fill="#f59e0b"><rect x="36" y="44" width="38" height="32" rx="4" /><rect x="84" y="56" width="38" height="20" rx="4" fill-opacity="0.7" /><rect x="58" y="22" width="38" height="20" rx="4" fill-opacity="0.85" /></g>
+    <rect x="36" y="90" width="88" height="8" rx="4" fill="#ffffff" fill-opacity="0.3" />
+  </g>
+  <!-- Módulo: ventas / gráfico -->
+  <g transform="translate(760 110)">
+    <rect width="160" height="120" rx="18" fill="#0D1B2A" stroke="#ffffff" stroke-opacity="0.15" />
+    <g fill="#34d399"><rect x="34" y="58" width="16" height="22" rx="3" fill-opacity="0.6" /><rect x="58" y="46" width="16" height="34" rx="3" fill-opacity="0.75" /><rect x="82" y="34" width="16" height="46" rx="3" fill-opacity="0.9" /><rect x="106" y="22" width="16" height="58" rx="3" /></g>
+    <rect x="34" y="92" width="88" height="8" rx="4" fill="#ffffff" fill-opacity="0.3" />
+  </g>
+  <!-- Módulo: compras / documento -->
+  <g transform="translate(250 370)">
+    <rect width="160" height="120" rx="18" fill="#0D1B2A" stroke="#ffffff" stroke-opacity="0.15" />
+    <rect x="52" y="20" width="56" height="70" rx="6" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-opacity="0.3" />
+    <g fill="#ffffff" fill-opacity="0.4"><rect x="62" y="34" width="36" height="5" rx="2.5" /><rect x="62" y="46" width="28" height="5" rx="2.5" /><rect x="62" y="58" width="32" height="5" rx="2.5" /></g>
+    <circle cx="100" cy="82" r="13" fill="#10b981" />
+    <path d="M94 82 L98 86 L106 78" stroke="#0D1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <rect x="36" y="98" width="88" height="8" rx="4" fill="#ffffff" fill-opacity="0.3" />
+  </g>
+  <!-- Módulo: personas -->
+  <g transform="translate(790 370)">
+    <rect width="160" height="120" rx="18" fill="#0D1B2A" stroke="#ffffff" stroke-opacity="0.15" />
+    <g fill="#34d399">
+      <circle cx="62" cy="42" r="13" fill-opacity="0.7" /><path d="M40 82 C40 64 84 64 84 82 Z" fill-opacity="0.7" />
+      <circle cx="98" cy="42" r="13" /><path d="M76 82 C76 64 120 64 120 82 Z" />
+    </g>
+    <rect x="36" y="96" width="88" height="8" rx="4" fill="#ffffff" fill-opacity="0.3" />
+  </g>
+  <!-- Módulo nuevo que se suma -->
+  <g transform="translate(540 500)">
+    <rect width="120" height="80" rx="16" stroke="#fbbf24" stroke-width="2" stroke-dasharray="7 6" fill="#f59e0b" fill-opacity="0.08" />
+    <path d="M60 24 V56 M44 40 H76" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>
