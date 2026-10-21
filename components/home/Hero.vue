@@ -72,7 +72,7 @@ const stats = metrics.slice(0, 3)
             <span class="relative">
               <span class="text-brand-400">transforma</span>
               <span
-                class="absolute -bottom-1 left-0 h-[2px] w-full bg-brand-600/50 rounded-full"
+                class="absolute -bottom-1 left-0 h-[2px] w-full bg-brand-700/50 rounded-full"
                 aria-hidden="true"
               />
             </span>
@@ -80,8 +80,8 @@ const stats = metrics.slice(0, 3)
           </h1>
 
           <p class="mt-7 max-w-lg text-[1.0625rem] leading-relaxed text-slate-400">
-            GIS/ArcGIS, sistemas de gestión, aplicaciones educativas y nube Azure.
-            Desarrollamos tecnología a medida para empresas, municipios e instituciones
+            Desarrollo de software a medida en Chile: sistemas de gestión, GIS/ArcGIS,
+            analítica de datos y nube Azure para empresas, municipios e instituciones
             que necesitan resultados concretos — no promesas genéricas.
           </p>
 
@@ -89,7 +89,7 @@ const stats = metrics.slice(0, 3)
           <div class="mt-9 flex flex-wrap gap-3">
             <NuxtLink
               to="/contacto"
-              class="inline-flex items-center gap-2 rounded-lg bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/30 transition-all hover:bg-brand-500 hover:shadow-lg hover:shadow-brand-900/40"
+              class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/30 transition-all hover:bg-brand-800 hover:shadow-lg hover:shadow-brand-900/40"
             >
               Pide tu cotización
               <ArrowRight class="h-4 w-4" />
@@ -129,7 +129,7 @@ const stats = metrics.slice(0, 3)
                 <div
                   v-for="item in highlights"
                   :key="item.label"
-                  class="group flex items-center gap-3.5 rounded-xl border border-white/[0.06] bg-white/[0.04] px-4 py-3.5 transition-all duration-200 hover:border-brand-500/25 hover:bg-brand-500/[0.08]"
+                  class="group flex items-center gap-3.5 rounded-xl border border-white/[0.06] bg-white/[0.04] px-4 py-3.5 transition-all duration-200 hover:border-brand-500/25 hover:bg-brand-800/[0.08]"
                 >
                   <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/5">
                     <component :is="item.icon" class="h-4 w-4" :class="item.color" />

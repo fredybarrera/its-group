@@ -119,7 +119,7 @@ function formatDate(date: string) {
         <div class="mt-12 border-t border-slate-100 pt-6">
           <NuxtLink
             to="/blog"
-            class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-accent-600"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-accent-700"
           >
             <ArrowLeft class="h-4 w-4" />
             Volver al blog

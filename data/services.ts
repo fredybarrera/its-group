@@ -8,6 +8,9 @@ export const services: Service[] = [
     icon: 'Boxes',
     category: 'Sistemas de Gestión',
     title: 'Sistemas de Gestión Empresarial',
+    seoTitle: 'Sistemas de gestión empresarial a medida',
+    seoDescription:
+      'ERP, control de activos y control de bodega desarrollados a la medida de tus procesos. Sistemas de gestión empresarial para empresas en Chile.',
     shortDescription:
       'ERP, control de activos y control de bodega a la medida de tus procesos, no al revés.',
     longDescription:
@@ -52,6 +55,9 @@ export const services: Service[] = [
     icon: 'Factory',
     category: 'Soluciones Industriales',
     title: 'Soluciones Industriales y de Terreno',
+    seoTitle: 'Software industrial y reportes en terreno',
+    seoDescription:
+      'Software para control, seguimiento y reportes en terreno: inspecciones con fotos, GPS y aprobación, e informes en PDF listos para entregar.',
     shortDescription:
       'Control, seguimiento y reportes en terreno para operaciones que ocurren fuera de la oficina.',
     longDescription:
@@ -94,6 +100,9 @@ export const services: Service[] = [
     icon: 'MapPinned',
     category: 'Tecnología GIS / ArcGIS',
     title: 'Tecnología GIS y ArcGIS',
+    seoTitle: 'Consultoría ArcGIS y soluciones GIS en Chile',
+    seoDescription:
+      'Consultoría ArcGIS y soluciones GIS en Chile: mapas interactivos, análisis espacial y dashboards geográficos sobre la plataforma ArcGIS de Esri.',
     shortDescription:
       'Mapas interactivos, análisis espacial y dashboards geográficos con la plataforma ArcGIS de Esri.',
     longDescription:
@@ -138,6 +147,9 @@ export const services: Service[] = [
     icon: 'GraduationCap',
     category: 'Aplicaciones Educativas',
     title: 'Aplicaciones Educativas',
+    seoTitle: 'Aplicaciones educativas y gestión escolar',
+    seoDescription:
+      'Aplicaciones educativas para colegios e instituciones: gestión de cursos, clases, evaluaciones, asistencia y comunicación con apoderados.',
     shortDescription:
       'Plataformas de gestión de cursos, clases, evaluaciones y asistencia para instituciones educativas.',
     longDescription:
@@ -179,6 +191,9 @@ export const services: Service[] = [
     icon: 'Cloud',
     category: 'Cloud & Infraestructura',
     title: 'Cloud e Infraestructura Azure',
+    seoTitle: 'Asesoría Azure en Chile: migración y nube',
+    seoDescription:
+      'Asesoría e implementación de Microsoft Azure en Chile: migración a la nube, arquitectura, infraestructura como código y optimización de costos.',
     shortDescription:
       'Asesoría e implementación de Microsoft Azure: migración, arquitectura y optimización de costos.',
     longDescription:
@@ -220,6 +235,9 @@ export const services: Service[] = [
     icon: 'Headset',
     category: 'Consultoría TI',
     title: 'Consultoría TI y Soporte',
+    seoTitle: 'Consultoría informática y soporte TI',
+    seoDescription:
+      'Consultoría informática para empresas en Chile: asesoría tecnológica, auditoría de sistemas y soporte para que la tecnología impulse tu negocio.',
     shortDescription:
       'Asesoría informática general, auditoría tecnológica y soporte para que la tecnología impulse tu negocio.',
     longDescription:
@@ -261,6 +279,9 @@ export const services: Service[] = [
     icon: 'CarFront',
     category: 'Control de Acceso Vehicular',
     title: 'Sistema de Control de Acceso a Estacionamientos',
+    seoTitle: 'Control de acceso vehicular y estacionamientos',
+    seoDescription:
+      'Sistema de control de acceso vehicular y gestión de estacionamientos: ingresos y salidas, lectura de patentes, ocupación de plazas y cobro integrado.',
     shortDescription:
       'Gestión centralizada del ingreso, salida y disponibilidad de vehículos en estacionamientos, con cobro integrado y visibilidad en tiempo real.',
     longDescription:
@@ -309,6 +330,9 @@ export const services: Service[] = [
     icon: 'ChartNoAxesCombined',
     category: 'Analítica de Datos',
     title: 'Analítica de Datos e Inteligencia de Negocio',
+    seoTitle: 'Analítica de datos e inteligencia de negocio',
+    seoDescription:
+      'Analítica de datos para empresas en Chile: integramos tus fuentes y las convertimos en indicadores, tableros e informes trazables para decidir.',
     shortDescription:
       'Integramos tus fuentes de datos y las convertimos en indicadores, tableros e informes para decidir con evidencia.',
     longDescription:

@@ -25,7 +25,7 @@ useSeo({
 
 const blocks = [
   { key: 'problem', label: 'Problema', icon: AlertCircle, text: current.problem, color: 'text-rose-600 bg-rose-50' },
-  { key: 'solution', label: 'Solución', icon: Lightbulb, text: current.solution, color: 'text-brand-600 bg-brand-50' },
+  { key: 'solution', label: 'Solución', icon: Lightbulb, text: current.solution, color: 'text-brand-700 bg-brand-50' },
   { key: 'result', label: 'Resultado', icon: TrendingUp, text: current.result, color: 'text-emerald-600 bg-emerald-50' },
 ]
 </script>
@@ -104,7 +104,7 @@ const blocks = [
             :key="metric.label"
             class="rounded-xl border border-slate-100 bg-slate-50 p-5 text-center"
           >
-            <p class="text-3xl font-extrabold text-brand-600">{{ metric.value }}</p>
+            <p class="text-3xl font-extrabold text-brand-700">{{ metric.value }}</p>
             <p class="mt-1 text-xs text-slate-500">{{ metric.label }}</p>
           </div>
         </div>

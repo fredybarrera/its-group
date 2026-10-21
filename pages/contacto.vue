@@ -44,34 +44,34 @@ const calendlyUrl = useRuntimeConfig().public.calendlyUrl
             <h2 class="text-lg font-bold text-navy">Datos de contacto</h2>
             <ul class="mt-4 space-y-4">
               <li v-for="item in contactItems" :key="item.label" class="flex items-start gap-3">
-                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
                   <component :is="item.icon" class="h-5 w-5" />
                 </span>
                 <div>
-                  <p class="text-xs uppercase tracking-wider text-slate-400">{{ item.label }}</p>
-                  <a :href="item.href" class="font-medium text-navy hover:text-brand-600">
+                  <p class="text-xs uppercase tracking-wider text-slate-500">{{ item.label }}</p>
+                  <a :href="item.href" class="font-medium text-navy hover:text-brand-700">
                     {{ item.value }}
                   </a>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
                   <MapPin class="h-5 w-5" />
                 </span>
                 <div>
-                  <p class="text-xs uppercase tracking-wider text-slate-400">Ubicación</p>
-                  <p class="font-medium text-navy">{{ site.contact.addressLine }}</p>
+                  <p class="text-xs uppercase tracking-wider text-slate-500">Ubicación</p>
+                  <p class="font-medium text-navy">{{ site.contact.city }}</p>
                   <p class="text-sm text-slate-600">
-                    {{ site.contact.city }}, {{ site.contact.country }}
+                    {{ site.contact.region }}, {{ site.contact.country }}
                   </p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
                   <Clock class="h-5 w-5" />
                 </span>
                 <div>
-                  <p class="text-xs uppercase tracking-wider text-slate-400">Horario</p>
+                  <p class="text-xs uppercase tracking-wider text-slate-500">Horario</p>
                   <p class="font-medium text-navy">Lun a Vie · 9:00 – 18:00</p>
                 </div>
               </li>
@@ -126,7 +126,7 @@ const calendlyUrl = useRuntimeConfig().public.calendlyUrl
                 Enviar correo
               </a>
             </div>
-            <p class="mt-4 text-xs text-slate-400">
+            <p class="mt-4 text-xs text-slate-500">
               ⚠️ Configura tu enlace en la variable NUXT_PUBLIC_CALENDLY_URL.
             </p>
           </div>

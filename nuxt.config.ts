@@ -8,7 +8,18 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@nuxt/eslint',
+    '@nuxt/fonts',
   ],
+
+  // Fuentes descargadas en el build y servidas desde el propio sitio: evita la
+  // hoja de Google Fonts que bloqueaba el render (~800 ms en móvil).
+  fonts: {
+    families: [
+      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700, 800] },
+      { name: 'Sora', provider: 'google', weights: [600, 700, 800] },
+    ],
+    defaults: { subsets: ['latin'] },
+  },
 
   // Configuración en runtime. Las claves privadas (sin `public`) solo existen en
   // el servidor y se sobrescriben con variables de entorno NUXT_* (ver .env.example).
@@ -33,12 +44,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap',
-        },
       ],
     },
   },

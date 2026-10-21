@@ -5,7 +5,7 @@ import { services } from '~/data/services'
 useSeo({
   title: 'Portafolio de casos de éxito',
   description:
-    'Casos de éxito de IT Solutions Group en GIS/ArcGIS, sistemas de gestión, soluciones en terreno, educación y cloud Azure. Problema, solución y resultado.',
+    'Proyectos de IT Solutions Group en construcción, telecomunicaciones, estacionamientos, deportes y sector público: problema, solución y resultado.',
   path: '/portafolio',
 })
 
@@ -40,7 +40,7 @@ const filtered = computed(() =>
         <!-- Filtros -->
         <div class="flex flex-col gap-5">
           <div>
-            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
               Industria
             </p>
             <div class="flex flex-wrap gap-2">
@@ -51,7 +51,7 @@ const filtered = computed(() =>
                 class="rounded-full border px-4 py-1.5 text-sm font-medium transition-colors"
                 :class="
                   activeIndustry === industry
-                    ? 'border-brand-600 bg-brand-600 text-white'
+                    ? 'border-brand-600 bg-brand-700 text-white'
                     : 'border-slate-200 bg-white text-slate-600 hover:border-brand-300'
                 "
                 @click="activeIndustry = industry"
@@ -62,7 +62,7 @@ const filtered = computed(() =>
           </div>
 
           <div>
-            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
               Servicio
             </p>
             <div class="flex flex-wrap gap-2">

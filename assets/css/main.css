@@ -31,16 +31,16 @@
 
   /* Botón primario (CTA principal) */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-6 py-3
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-700 px-6 py-3
       font-semibold text-white shadow-sm transition-all duration-200
-      hover:bg-brand-700 hover:shadow-md focus-visible:outline focus-visible:outline-2
+      hover:bg-brand-800 hover:shadow-md focus-visible:outline focus-visible:outline-2
       focus-visible:outline-offset-2 focus-visible:outline-brand-600;
   }
 
   /* Botón secundario (acento ámbar) */
   .btn-accent {
     @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent-500 px-6 py-3
-      font-semibold text-white shadow-sm transition-all duration-200
+      font-semibold text-navy shadow-sm transition-all duration-200
       hover:bg-accent-600 hover:shadow-md focus-visible:outline focus-visible:outline-2
       focus-visible:outline-offset-2 focus-visible:outline-accent-500;
   }
@@ -55,7 +55,7 @@
 
   /* Etiqueta superior de sección (eyebrow) — ámbar para contraste y diferenciación */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-accent-600;
+    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-accent-700;
   }
 
   .card {
@@ -88,7 +88,7 @@
     @apply mt-4 list-decimal space-y-1.5 pl-6 marker:font-semibold marker:text-brand-500;
   }
   .article-content :where(a) {
-    @apply font-semibold text-brand-600 underline-offset-2 hover:underline;
+    @apply font-semibold text-brand-700 underline-offset-2 hover:underline;
   }
   .article-content :where(blockquote) {
     @apply mt-6 border-l-4 border-accent-400 bg-slate-50 py-2 pl-4 italic text-slate-600;

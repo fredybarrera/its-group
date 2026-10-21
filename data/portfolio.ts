@@ -26,7 +26,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: 'from-navy to-accent-500',
     imageAlt: 'Logotipo de Congreso Visible: datos oficiales del Congreso Nacional de Chile',
-    cover: '/portafolio/congreso-visible.png',
+    cover: '/portafolio/congreso-visible.webp',
     ogImage: '/og/portafolio/congreso-visible.png',
     liveUrl: 'https://congresovisible.cl',
     technologies: ['Nuxt', 'ASP.NET Core', 'PostgreSQL', 'Azure Container Apps', 'Azure Static Web Apps', 'Bicep'],

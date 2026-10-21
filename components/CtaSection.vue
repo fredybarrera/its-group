@@ -34,7 +34,7 @@ withDefaults(
         <!-- Layout asimétrico: texto izquierda / acciones derecha -->
         <div class="relative grid gap-8 px-8 py-14 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16 lg:px-14">
           <div>
-            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-600">
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-700">
               // siguiente paso
             </span>
             <h2 class="font-display mt-3 text-3xl font-bold text-white sm:text-4xl">
@@ -46,7 +46,7 @@ withDefaults(
           <div class="flex shrink-0 flex-col gap-3">
             <NuxtLink
               to="/contacto"
-              class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand-900/40 transition-all hover:bg-brand-500"
+              class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-700 px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand-900/40 transition-all hover:bg-brand-800"
             >
               Pide tu cotización
               <ArrowRight class="h-4 w-4" />

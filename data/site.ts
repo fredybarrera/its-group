@@ -14,11 +14,11 @@ export const site: SiteInfo = {
     phoneHref: 'tel:+56931778243',
     whatsapp: '+56 9 3177 8243',
     whatsappHref: 'https://wa.me/56931778243',
-    addressLine: 'Talcahuano',
-    city: 'Bío Bío',
-    region: 'Bío Bío',
+    addressLine: '', // ⚠️ agregar calle y número si hay oficina con atención
+    city: 'Talcahuano',
+    region: 'Región del Biobío',
     country: 'Chile',
-    mapsQuery: 'Talcahuano, Bío Bío, Chile',
+    mapsQuery: 'Talcahuano, Región del Biobío, Chile',
   },
   social: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/itsolutionsgroup' }, // ⚠️ ejemplo

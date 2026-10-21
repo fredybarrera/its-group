@@ -4,7 +4,7 @@ import { services } from '~/data/services'
 useSeo({
   title: 'Servicios de desarrollo de software y consultoría TI',
   description:
-    'Sistemas de gestión, soluciones industriales, GIS/ArcGIS, aplicaciones educativas, cloud Azure y consultoría TI. Conoce nuestras seis líneas de servicio.',
+    'Desarrollo de software a medida en Chile: sistemas de gestión, reportes en terreno, GIS/ArcGIS, analítica de datos, nube Azure y consultoría TI.',
   path: '/servicios',
 })
 </script>

@@ -6,7 +6,7 @@ import { team, methodology } from '~/data/team'
 useSeo({
   title: 'Nosotros — Por qué elegirnos',
   description:
-    'Conoce a IT Solutions Group: empresa chilena de desarrollo de software, especialistas en GIS con ArcGIS de Esri y en Azure. Nuestra historia, certificaciones y metodología.',
+    'Empresa chilena de desarrollo de software a medida, especialista en GIS con ArcGIS de Esri y Microsoft Azure. Conoce nuestra historia y metodología.',
   path: '/nosotros',
 })
 
@@ -70,7 +70,7 @@ const values = [
             :key="metric.label"
             class="rounded-2xl border border-slate-100 bg-slate-50 p-6 text-center"
           >
-            <p class="text-3xl font-extrabold text-brand-600">{{ metric.value }}</p>
+            <p class="text-3xl font-extrabold text-brand-700">{{ metric.value }}</p>
             <p class="mt-1 text-sm text-slate-600">{{ metric.label }}</p>
           </div>
         </div>
@@ -80,7 +80,7 @@ const values = [
     <!-- Certificaciones -->
     <section class="bg-slate-50 py-14">
       <div class="container">
-        <p class="mb-5 text-center text-sm font-medium uppercase tracking-widest text-slate-400">
+        <p class="mb-5 text-center text-sm font-medium uppercase tracking-widest text-slate-500">
           Nuestras especialidades
         </p>
         <CertificationBand />
@@ -93,7 +93,7 @@ const values = [
         <SectionHeading eyebrow="Nuestros valores" title="Cómo trabajamos" />
         <div class="mt-12 grid gap-6 md:grid-cols-3">
           <div v-for="value in values" :key="value.title" v-reveal class="card text-center">
-            <span class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+            <span class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
               <component :is="value.icon" class="h-6 w-6" />
             </span>
             <h3 class="mt-4 text-lg font-bold text-navy">{{ value.title }}</h3>
@@ -139,11 +139,11 @@ const values = [
               :aria-label="`Foto de ${member.name}`"
             />
             <h3 class="mt-4 font-bold text-navy">{{ member.name }}</h3>
-            <p class="text-sm font-medium text-brand-600">{{ member.role }}</p>
+            <p class="text-sm font-medium text-brand-700">{{ member.role }}</p>
             <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ member.bio }}</p>
           </div>
         </div>
-        <p class="mt-6 text-center text-xs text-slate-400">
+        <p class="mt-6 text-center text-xs text-slate-500">
           ⚠️ Perfiles y fotos de ejemplo — reemplazar por el equipo real.
         </p>
       </div>
