@@ -5,6 +5,9 @@ date: '2025-11-20'
 category: 'GIS / ArcGIS'
 readTime: 6
 image: 'from-brand-700 to-accent-500'
+cover: '/blog/que-es-gis-arcgis-empresas.svg'
+ogImage: '/og/blog/que-es-gis-arcgis-empresas.png'
+imageAlt: 'Ilustración de capas de un sistema de información geográfica: relieve, calles y predios, y puntos de interés'
 author: 'Equipo IT Solutions Group'
 ---
 
@@ -22,7 +25,7 @@ dimensión sobre la mesa.
 
 ## ArcGIS, la plataforma de Esri
 
-Como **Partner oficial de Esri Chile**, implementamos la plataforma ArcGIS en sus
+Como **especialistas en ArcGIS de Esri**, implementamos la plataforma ArcGIS en sus
 distintas modalidades:
 
 - **ArcGIS Online**: mapas y dashboards en la nube, sin infraestructura propia.

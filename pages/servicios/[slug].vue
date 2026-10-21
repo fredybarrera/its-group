@@ -66,8 +66,16 @@ useHead({
           Cotiza este servicio
           <ArrowRight class="h-5 w-5" />
         </NuxtLink>
+        <NuxtLink
+          v-if="current.demoUrl && current.demoRequiresAccess"
+          :to="demoAccessRoute(current.slug)"
+          class="inline-flex items-center gap-2 rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10"
+        >
+          <MonitorPlay class="h-4 w-4" />
+          Solicitar acceso a la demo
+        </NuxtLink>
         <a
-          v-if="current.demoUrl"
+          v-else-if="current.demoUrl"
           :href="current.demoUrl"
           target="_blank"
           rel="noopener noreferrer"

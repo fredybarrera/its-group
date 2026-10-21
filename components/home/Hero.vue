@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ArrowRight, CalendarCheck, MapPin, Cloud, Code2, GraduationCap } from 'lucide-vue-next'
-import { metrics } from '~/data/site'
+import { metrics, sectionVisibility } from '~/data/site'
 
 const highlights = [
-  { icon: MapPin,         label: 'Partner oficial Esri Chile (ArcGIS)', color: 'text-brand-400' },
+  { icon: MapPin,         label: 'Especialistas GIS con ArcGIS de Esri',color: 'text-brand-400' },
   { icon: Cloud,          label: 'Especialistas Microsoft Azure',        color: 'text-accent-400' },
   { icon: Code2,          label: 'Software a medida multi-industria',    color: 'text-brand-300' },
   { icon: GraduationCap, label: 'Aplicaciones educativas',              color: 'text-accent-300' },
@@ -103,7 +103,10 @@ const stats = metrics.slice(0, 3)
           </div>
 
           <!-- Métricas — sin decoración, solo datos -->
-          <div class="mt-12 flex flex-wrap gap-10 border-t border-white/8 pt-8">
+          <div
+            v-if="sectionVisibility.metrics"
+            class="mt-12 flex flex-wrap gap-10 border-t border-white/8 pt-8"
+          >
             <div v-for="stat in stats" :key="stat.value">
               <p class="font-display text-3xl font-bold text-brand-400">{{ stat.value }}</p>
               <p class="mt-0.5 text-sm text-slate-500">{{ stat.label }}</p>
@@ -140,14 +143,14 @@ const stats = metrics.slice(0, 3)
               <!-- Separador -->
               <div class="my-5 border-t border-white/[0.06]" />
 
-              <!-- Badge Esri con estilo de certificación -->
+              <!-- Badge de especialidad GIS -->
               <div class="rounded-xl bg-accent-500/[0.08] px-4 py-3.5 border border-accent-500/20">
                 <div class="flex items-start gap-3">
                   <span class="mt-0.5 text-base">🏅</span>
                   <div>
-                    <p class="text-xs font-semibold text-accent-400">Partner Oficial</p>
+                    <p class="text-xs font-semibold text-accent-400">Especialistas GIS</p>
                     <p class="mt-0.5 text-xs text-slate-400">
-                      Esri Chile · tecnología ArcGIS certificada
+                      Sistemas de información geográfica con ArcGIS de Esri
                     </p>
                   </div>
                 </div>

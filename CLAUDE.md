@@ -15,17 +15,19 @@ jefes de operaciones, directores, municipios, instituciones educativas). La
 conversión principal es **solicitar cotización** o **agendar una reunión**.
 
 **Diferenciadores que deben destacar siempre:**
-- Partner oficial de Esri Chile (tecnología ArcGIS / GIS)
+- Especialistas en sistemas de información geográfica (GIS) con ArcGIS de Esri (no somos Partner oficial: no usar ese término)
 - Especialistas en servicios cloud Microsoft Azure
 - Experiencia multi-industria en software a medida
 
-**Servicios (organizados en 6 categorías):**
+**Servicios (organizados en 8 categorías, definidas en `data/services.ts`):**
 1. Sistemas de Gestión — ERP, control de activos, control de bodega
 2. Soluciones Industriales — control y seguimiento, reportes en terreno
 3. Tecnología GIS / ArcGIS — mapas interactivos, análisis espacial, dashboards
 4. Aplicaciones Educativas — gestión de cursos, clases, evaluaciones, asistencia
 5. Cloud & Infraestructura — asesoría e implementación de Azure
 6. Consultoría TI — asesoría informática general, auditoría, soporte
+7. Control de Acceso Vehicular — gestión de estacionamientos (producto ParkOS)
+8. Analítica de Datos — integración de fuentes, indicadores, tableros e informes
 
 ---
 
@@ -74,13 +76,31 @@ conversión principal es **solicitar cotización** o **agendar una reunión**.
 
 - `/` — Inicio (hero, propuesta de valor, certificaciones, servicios resumidos, casos de éxito, testimonios, CTA)
 - `/servicios` — Índice de servicios
-- `/servicios/[slug]` — Página individual por servicio (6 en total)
+- `/servicios/[slug]` — Página individual por servicio (8 en total)
 - `/portafolio` — Casos de éxito filtrables (Problema → Solución → Resultado)
 - `/nosotros` — Empresa, certificaciones, equipo, metodología
 - `/blog` y `/blog/[slug]` — Centro de conocimiento
 - `/contacto` — Formulario inteligente + agendar reunión + WhatsApp
 
 URLs siempre semánticas y en español (ej. `/servicios/gis-arcgis`).
+
+---
+
+## Portafolio y datos reales
+
+- Los casos viven en `data/portfolio.ts`. Los reales van primero (los tres primeros se destacan en
+  la portada); los de ejemplo quedan marcados con `⚠️` hasta reemplazarlos.
+- No nombres a un cliente sin su autorización: usa el rubro ("Empresa constructora"). No inventes
+  resultados ni cifras: solo las que se pueden verificar en el propio sistema o sus datos.
+- Las capturas de sistemas de clientes se publican anonimizadas: pixela nombres de personas, montos,
+  nombres o códigos de sitios y coordenadas.
+- Demo protegida con contraseña: `liveUrlRequiresAccess` (caso) o `demoRequiresAccess` (servicio)
+  cambian el botón por "Solicitar acceso a la demo", que abre `/contacto` con el formulario prellenado.
+- Imágenes: `cover` en 1200×630 (SVG o WebP) y `ogImage` en PNG 1200×630 bajo `public/og/`, porque las
+  redes sociales no muestran SVG. Mantén cada PNG bajo ~300 KB para que WhatsApp genere la vista previa.
+  `public/og-image.svg` es la fuente editable de `public/og/og-image.png`; regenera el PNG si cambia.
+- Métricas, testimonios y equipo están ocultos hasta tener datos reales: `sectionVisibility` en
+  `data/site.ts`.
 
 ---
 

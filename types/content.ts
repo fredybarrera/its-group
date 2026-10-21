@@ -62,6 +62,8 @@ export interface Service {
   keyword: string
   /** URL de demo interactiva, si existe. */
   demoUrl?: string
+  /** La demo está protegida: el botón lleva a solicitar acceso en vez de abrirla. */
+  demoRequiresAccess?: boolean
 }
 
 export interface CaseStudy {
@@ -77,6 +79,15 @@ export interface CaseStudy {
   metrics: Metric[]
   image: string
   imageAlt: string
+  /** Imagen real en /public; si existe, reemplaza el degradado de `image`. */
+  cover?: string
+  /** PNG 1200×630 para la vista previa en redes sociales (no admiten SVG). */
+  ogImage?: string
+  /** URL pública del proyecto en producción. */
+  liveUrl?: string
+  /** La URL está protegida: el botón lleva a solicitar acceso en vez de abrirla. */
+  liveUrlRequiresAccess?: boolean
+  technologies?: string[]
 }
 
 export interface Testimonial {

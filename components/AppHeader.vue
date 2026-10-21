@@ -34,9 +34,9 @@ function isActive(to: string) {
     <div class="bg-navy border-b border-brand-700/40">
       <div class="container flex h-9 items-center justify-between">
         <p class="text-xs text-slate-400">
-          Partner oficial
-          <span class="font-semibold text-brand-400">Esri Chile</span>
-          · Especialistas
+          Especialistas en
+          <span class="font-semibold text-brand-400">GIS con ArcGIS de Esri</span>
+          y
           <span class="font-semibold text-accent-400">Microsoft Azure</span>
         </p>
         <a

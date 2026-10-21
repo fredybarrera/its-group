@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1B2A" />
+      <stop offset="1" stop-color="#78350f" />
+    </linearGradient>
+    <radialGradient id="glow" cx="760" cy="300" r="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f59e0b" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Servidor on-premise -->
+  <g transform="translate(170 210)">
+    <g fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.2">
+      <rect width="150" height="58" rx="10" /><rect y="70" width="150" height="58" rx="10" /><rect y="140" width="150" height="58" rx="10" />
+    </g>
+    <g fill="#ffffff" fill-opacity="0.25">
+      <rect x="20" y="25" width="70" height="8" rx="4" /><rect x="20" y="95" width="70" height="8" rx="4" /><rect x="20" y="165" width="70" height="8" rx="4" />
+    </g>
+    <circle cx="124" cy="29" r="6" fill="#f87171" fill-opacity="0.8" />
+    <circle cx="124" cy="99" r="6" fill="#fbbf24" fill-opacity="0.8" />
+    <circle cx="124" cy="169" r="6" fill="#f87171" fill-opacity="0.8" />
+  </g>
+
+  <!-- Flecha de migración -->
+  <g stroke="#fbbf24" stroke-width="3" stroke-linecap="round">
+    <path d="M350 310 H470" stroke-dasharray="10 9" />
+    <path d="M456 296 L472 310 L456 324" stroke-linejoin="round" />
+  </g>
+
+  <!-- Nube -->
+  <path d="M560 470 H990 C1050 470 1080 420 1070 375 C1060 330 1015 305 975 315 C965 240 900 190 825 200 C770 205 730 235 710 275 C685 255 645 250 615 268 C580 290 570 330 578 360 C535 368 510 405 515 430 C520 455 535 470 560 470 Z" fill="#ffffff" fill-opacity="0.04" stroke="#fbbf24" stroke-opacity="0.45" stroke-width="2.5" />
+
+  <!-- Contenedores autoescalables -->
+  <g transform="translate(610 300)">
+    <g stroke="#34d399" stroke-opacity="0.5" stroke-width="2">
+      <path d="M60 46 H130 M190 46 H260 M320 46 H390" />
+      <path d="M225 76 V110" />
+    </g>
+    <g>
+      <rect width="120" height="92" rx="14" fill="#0D1B2A" stroke="#34d399" stroke-opacity="0.6" />
+      <rect x="130" width="120" height="92" rx="14" fill="#0D1B2A" stroke="#34d399" stroke-opacity="0.6" />
+      <rect x="260" width="120" height="92" rx="14" fill="#0D1B2A" stroke="#34d399" stroke-opacity="0.6" />
+    </g>
+    <g fill="#10b981">
+      <rect x="20" y="20" width="36" height="22" rx="5" fill-opacity="0.8" /><rect x="64" y="20" width="36" height="22" rx="5" fill-opacity="0.5" />
+      <rect x="20" y="50" width="36" height="22" rx="5" fill-opacity="0.5" /><rect x="64" y="50" width="36" height="22" rx="5" fill-opacity="0.8" />
+      <rect x="150" y="20" width="36" height="22" rx="5" fill-opacity="0.8" /><rect x="194" y="20" width="36" height="22" rx="5" fill-opacity="0.8" />
+      <rect x="150" y="50" width="36" height="22" rx="5" fill-opacity="0.5" /><rect x="194" y="50" width="36" height="22" rx="5" fill-opacity="0.5" />
+      <rect x="280" y="20" width="36" height="22" rx="5" fill-opacity="0.5" /><rect x="324" y="20" width="36" height="22" rx="5" fill-opacity="0.8" />
+    </g>
+    <!-- Réplica nueva escalando -->
+    <rect x="280" y="50" width="36" height="22" rx="5" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4 4" />
+    <rect x="324" y="50" width="36" height="22" rx="5" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- Indicador de autoescalado -->
+  <g transform="translate(760 222)">
+    <rect width="150" height="44" rx="22" fill="#0D1B2A" stroke="#ffffff" stroke-opacity="0.15" />
+    <path d="M22 30 L34 18 L44 26 L58 12" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <rect x="72" y="18" width="58" height="8" rx="4" fill="#ffffff" fill-opacity="0.4" />
+  </g>
+
+  <!-- Pipeline de despliegue continuo -->
+  <g transform="translate(400 520)">
+    <path d="M0 20 H400" stroke="#ffffff" stroke-opacity="0.15" stroke-width="3" />
+    <g fill="#10b981"><circle cx="0" cy="20" r="12" /><circle cx="133" cy="20" r="12" /><circle cx="266" cy="20" r="12" /></g>
+    <circle cx="400" cy="20" r="12" fill="#f59e0b" />
+    <g stroke="#0D1B2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-5 20 L-1 24 L6 16" /><path d="M128 20 L132 24 L139 16" /><path d="M261 20 L265 24 L272 16" />
+    </g>
+  </g>
+</svg>

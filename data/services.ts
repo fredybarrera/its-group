@@ -95,9 +95,9 @@ export const services: Service[] = [
     category: 'Tecnología GIS / ArcGIS',
     title: 'Tecnología GIS y ArcGIS',
     shortDescription:
-      'Mapas interactivos, análisis espacial y dashboards geográficos como Partner oficial de Esri Chile.',
+      'Mapas interactivos, análisis espacial y dashboards geográficos con la plataforma ArcGIS de Esri.',
     longDescription:
-      'Como Partner oficial de Esri Chile, ayudamos a organizaciones a tomar decisiones basadas en la ubicación. Implementamos plataformas ArcGIS, desarrollamos mapas interactivos, análisis espacial avanzado y dashboards geográficos que convierten datos territoriales en información accionable.',
+      'Como especialistas en sistemas de información geográfica con ArcGIS de Esri, ayudamos a organizaciones a tomar decisiones basadas en la ubicación. Implementamos plataformas ArcGIS, desarrollamos mapas interactivos, análisis espacial avanzado y dashboards geográficos que convierten datos territoriales en información accionable.',
     benefits: [
       {
         title: 'Inteligencia territorial',
@@ -301,7 +301,54 @@ export const services: Service[] = [
     ],
     technologies: ['Vue / Nuxt', 'Node.js', 'PostgreSQL', 'WebSockets', 'Microsoft Azure'],
     keyword: 'sistema de control de acceso vehicular y gestión de estacionamientos',
-    demoUrl: 'https://its-parkos.vercel.app/login',
+    demoUrl: 'https://its-parkos.vercel.app/',
+    demoRequiresAccess: true,
+  },
+  {
+    slug: 'analitica-de-datos',
+    icon: 'ChartNoAxesCombined',
+    category: 'Analítica de Datos',
+    title: 'Analítica de Datos e Inteligencia de Negocio',
+    shortDescription:
+      'Integramos tus fuentes de datos y las convertimos en indicadores, tableros e informes para decidir con evidencia.',
+    longDescription:
+      'Reunimos la información que hoy está dispersa entre sistemas, planillas y proveedores externos, la limpiamos y la organizamos en un modelo confiable. Sobre esa base construimos tableros, comparativas e informes a la medida de tu operación, con cada cifra trazable hasta su origen y la muestra a la vista, para que las decisiones se tomen con datos y no con intuición.',
+    benefits: [
+      {
+        title: 'Datos integrados',
+        description:
+          'Conectamos tus sistemas y fuentes externas en un solo lugar, con sincronización automática y sin digitación manual.',
+      },
+      {
+        title: 'Indicadores confiables',
+        description:
+          'Cada cifra muestra de dónde viene y con qué muestra se calculó, para saber cuándo un resultado es representativo.',
+      },
+      {
+        title: 'Informes que se usan',
+        description:
+          'Tableros, comparativas e informes pensados para quien decide, listos para compartir o imprimir.',
+      },
+    ],
+    useCases: [
+      {
+        industry: 'Deportes',
+        description:
+          'Análisis de rendimiento, scouting de jugadores y preparación de partidos para cuerpos técnicos.',
+      },
+      {
+        industry: 'Sector público y transparencia',
+        description:
+          'Consolidación de datos abiertos de distintas instituciones en indicadores comparables y verificables.',
+      },
+      {
+        industry: 'Gerencias y operaciones',
+        description:
+          'Tableros de gestión que cruzan ventas, inventario y operación para seguir el negocio día a día.',
+      },
+    ],
+    technologies: ['.NET', 'Vue / Nuxt', 'Python', 'PostgreSQL', 'SQL Server', 'Microsoft Azure'],
+    keyword: 'analítica de datos e inteligencia de negocio en Chile',
   },
 ]
 

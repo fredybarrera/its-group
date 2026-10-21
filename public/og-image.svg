@@ -1,20 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <!-- Fuente editable de /og/og-image.png. Fuentes: Sora (display) e Inter (texto), como en el sitio. -->
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a2540" />
-      <stop offset="1" stop-color="#1b417f" />
-    </linearGradient>
-    <linearGradient id="mark" x1="80" y1="80" x2="200" y2="200" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#1e5fbf" />
-      <stop offset="1" stop-color="#06b6d4" />
-    </linearGradient>
+    <radialGradient id="glow" cx="980" cy="300" r="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#059669" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#059669" stop-opacity="0" />
+    </radialGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)" />
-  <circle cx="1050" cy="120" r="260" fill="#06b6d4" opacity="0.12" />
-  <circle cx="120" cy="560" r="220" fill="#1e5fbf" opacity="0.18" />
-  <rect x="80" y="80" width="110" height="110" rx="24" fill="url(#mark)" />
-  <path d="M112 110h46M135 110v50M118 160h34" stroke="#fff" stroke-width="9" stroke-linecap="round" />
-  <text x="80" y="330" fill="#ffffff" font-family="'Segoe UI', Arial, sans-serif" font-size="68" font-weight="800">IT Solutions Group</text>
-  <text x="80" y="400" fill="#9fd8e6" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="600">Desarrollo de software a medida · GIS / ArcGIS · Azure</text>
-  <text x="80" y="520" fill="#cbd5e1" font-family="'Segoe UI', Arial, sans-serif" font-size="28">Partner oficial de Esri Chile · Especialistas en Microsoft Azure</text>
+  <rect width="1200" height="630" fill="#0D1B2A" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Curvas de nivel: firma visual del hero -->
+  <g stroke="#10b981" stroke-opacity="0.13" stroke-width="1.5" fill="none">
+    <path d="M-50 380 C150 230 350 530 550 350 S850 180 1050 310 S1250 430 1300 330" />
+    <path d="M-50 430 C130 290 330 590 530 400 S830 230 1030 360 S1230 480 1300 380" />
+    <path d="M-50 480 C110 340 310 640 510 450 S810 280 1010 410 S1210 530 1300 430" />
+    <path d="M-50 330 C170 180 370 480 570 300 S870 130 1070 260 S1270 380 1300 280" />
+    <path d="M-50 280 C190 130 390 430 590 250 S890 80 1090 210 S1290 330 1300 230" />
+  </g>
+
+  <!-- Punto de referencia cartográfica -->
+  <g transform="translate(1010 250)">
+    <circle r="70" stroke="#34d399" stroke-opacity="0.18" stroke-width="1.5" />
+    <circle r="40" stroke="#34d399" stroke-opacity="0.32" stroke-width="1.5" />
+    <path d="M0 0 C-9 -24 -34 -42 -34 -70 A34 34 0 0 1 34 -70 C34 -42 9 -24 0 0 Z" fill="#f59e0b" />
+    <circle cy="-70" r="13" fill="#0D1B2A" />
+  </g>
+  <g fill="#34d399" fill-opacity="0.5">
+    <circle cx="900" cy="400" r="5" /><circle cx="1110" cy="360" r="5" /><circle cx="860" cy="200" r="4" />
+  </g>
+
+  <!-- Coordenada -->
+  <text x="80" y="92" fill="#10b981" fill-opacity="0.75" font-family="'IBM Plex Mono', Consolas, monospace" font-size="18" letter-spacing="3">36°43′S 73°07′O</text>
+  <path d="M302 86 H352" stroke="#065f46" stroke-width="1.5" />
+  <text x="366" y="92" fill="#64748b" font-family="Inter, 'Segoe UI', sans-serif" font-size="18" font-weight="500">Talcahuano, Chile</text>
+
+  <!-- Logo: ícono + wordmark (mismo diseño que AppLogo.vue) -->
+  <g transform="translate(80 150) scale(2.3077)">
+    <rect width="52" height="52" rx="11" fill="#0D1B2A" stroke="#ffffff" stroke-opacity="0.16" stroke-width="0.8" />
+    <path d="M 14 18 L 26 26 L 14 34" stroke="#10b981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+    <rect x="30" y="20" width="10" height="13" rx="2.5" fill="#f59e0b" />
+  </g>
+  <text x="232" y="216" fill="#ffffff" font-family="Sora, 'Segoe UI', sans-serif" font-size="68" font-weight="700" letter-spacing="-1.5">IT Solutions</text>
+  <text x="236" y="256" fill="#34d399" font-family="Inter, 'Segoe UI', sans-serif" font-size="20" font-weight="600" letter-spacing="7">GROUP</text>
+
+  <!-- Propuesta de valor -->
+  <text x="80" y="380" fill="#ffffff" font-family="Sora, 'Segoe UI', sans-serif" font-size="44" font-weight="700" letter-spacing="-0.8">Software a medida que transforma</text>
+  <text x="80" y="436" fill="#34d399" font-family="Sora, 'Segoe UI', sans-serif" font-size="44" font-weight="700" letter-spacing="-0.8">operaciones reales.</text>
+
+  <!-- Especialidades -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" font-size="20" font-weight="600">
+    <rect x="80" y="500" width="246" height="48" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14" />
+    <circle cx="106" cy="524" r="6" fill="#10b981" />
+    <text x="124" y="531" fill="#e2e8f0">Software a medida</text>
+
+    <rect x="340" y="500" width="254" height="48" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14" />
+    <circle cx="366" cy="524" r="6" fill="#34d399" />
+    <text x="384" y="531" fill="#e2e8f0">GIS · ArcGIS de Esri</text>
+
+    <rect x="608" y="500" width="218" height="48" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14" />
+    <circle cx="634" cy="524" r="6" fill="#f59e0b" />
+    <text x="652" y="531" fill="#e2e8f0">Microsoft Azure</text>
+  </g>
 </svg>

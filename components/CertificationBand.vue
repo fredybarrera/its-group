@@ -6,8 +6,8 @@ withDefaults(defineProps<{ dark?: boolean }>(), { dark: false })
 const certifications = [
   {
     icon: Globe2,
-    name: 'Esri Partner',
-    detail: 'Partner oficial ArcGIS Chile',
+    name: 'ArcGIS de Esri',
+    detail: 'Especialistas en sistemas de información geográfica',
     tag: 'GIS',
     iconColor: 'text-brand-500',
     tagColor: 'bg-brand-50 text-brand-700',

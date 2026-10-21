@@ -18,7 +18,7 @@ export const team: TeamMember[] = [
   {
     name: 'Líder GIS', // ⚠️ ejemplo
     role: 'Especialista ArcGIS',
-    bio: 'Conduce los proyectos geoespaciales como referente Esri, desde el análisis hasta el dashboard final.',
+    bio: 'Conduce los proyectos geoespaciales como especialista en ArcGIS, desde el análisis hasta el dashboard final.',
     photo: 'from-accent-600 to-brand-500',
   },
   {
