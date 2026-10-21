@@ -23,6 +23,31 @@ useSeo({
   type: 'article',
 })
 
+const siteUrl = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')
+
+// Datos estructurados del caso (Schema.org).
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        name: current.title,
+        description: current.summary,
+        url: `${siteUrl}/portafolio/${current.slug}`,
+        inLanguage: 'es-CL',
+        genre: current.industry,
+        ...(relatedService.value ? { about: relatedService.value.title } : {}),
+        ...(current.ogImage ? { image: absoluteUrl(siteUrl, current.ogImage) } : {}),
+        ...(current.technologies?.length ? { keywords: current.technologies.join(', ') } : {}),
+        ...(current.liveUrl && !current.liveUrlRequiresAccess ? { sameAs: current.liveUrl } : {}),
+        creator: { '@id': organizationId(siteUrl) },
+      }),
+    },
+  ],
+})
+
 const blocks = [
   { key: 'problem', label: 'Problema', icon: AlertCircle, text: current.problem, color: 'text-rose-600 bg-rose-50' },
   { key: 'solution', label: 'Solución', icon: Lightbulb, text: current.solution, color: 'text-brand-700 bg-brand-50' },

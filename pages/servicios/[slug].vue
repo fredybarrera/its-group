@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowRight, Check, Building2, Cpu, MonitorPlay } from 'lucide-vue-next'
 import { services, getServiceBySlug } from '~/data/services'
-import { site } from '~/data/site'
+import { caseStudies } from '~/data/portfolio'
 
 const route = useRoute()
 const slug = computed(() => route.params.slug as string)
@@ -13,6 +13,15 @@ if (!service.value) {
 
 const current = service.value
 const otherServices = services.filter((s) => s.slug !== current.slug).slice(0, 3)
+const relatedCases = caseStudies.filter((c) => c.serviceSlug === current.slug).slice(0, 3)
+
+// Artículos que declaran este servicio en su frontmatter (`service: slug`).
+const { data: relatedArticles } = await useAsyncData(`service-articles-${current.slug}`, () =>
+  queryContent<{ _path: string; title: string }>('blog')
+    .where({ service: current.slug })
+    .only(['_path', 'title'])
+    .find(),
+)
 
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl.replace(/\/$/, '')
@@ -34,11 +43,8 @@ useHead({
         name: current.title,
         serviceType: current.category,
         description: current.longDescription,
-        provider: {
-          '@type': 'Organization',
-          name: site.name,
-          url: siteUrl,
-        },
+        url: `${siteUrl}/servicios/${current.slug}`,
+        provider: { '@id': organizationId(siteUrl) },
         areaServed: { '@type': 'Country', name: 'Chile' },
       }),
     },
@@ -147,8 +153,35 @@ useHead({
       </div>
     </section>
 
+    <!-- Enlaces internos: proyectos y artículos de este servicio -->
+    <section v-if="relatedCases.length || relatedArticles?.length" class="section bg-white">
+      <div class="container">
+        <template v-if="relatedCases.length">
+          <SectionHeading align="left" eyebrow="Portafolio" title="Proyectos con este servicio" />
+          <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <CaseStudyCard v-for="item in relatedCases" :key="item.slug" :case-study="item" />
+          </div>
+        </template>
+
+        <div v-if="relatedArticles?.length" :class="{ 'mt-14': relatedCases.length }">
+          <h2 class="text-xl font-bold text-navy">Del blog</h2>
+          <ul class="mt-4 space-y-3">
+            <li v-for="article in relatedArticles" :key="article._path">
+              <NuxtLink
+                :to="article._path"
+                class="group inline-flex items-start gap-2 font-semibold text-brand-700 hover:text-accent-700"
+              >
+                <ArrowRight class="mt-1 h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
+                {{ article.title }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Otros servicios -->
-    <section class="section bg-white">
+    <section class="section bg-slate-50">
       <div class="container">
         <SectionHeading align="left" eyebrow="Sigue explorando" title="Otros servicios" />
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -19,6 +19,13 @@ export const site: SiteInfo = {
     region: 'Región del Biobío',
     country: 'Chile',
     mapsQuery: 'Talcahuano, Región del Biobío, Chile',
+    // ⚠️ verificar el horario real de atención
+    hours: {
+      label: 'Lun a Vie · 9:00 – 18:00',
+      days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
   },
   social: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/itsolutionsgroup' }, // ⚠️ ejemplo

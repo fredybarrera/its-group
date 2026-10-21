@@ -8,6 +8,7 @@ readTime: 7
 image: 'from-navy to-accent-600'
 cover: '/blog/migrar-a-azure-guia-pyme.svg'
 ogImage: '/og/blog/migrar-a-azure-guia-pyme.png'
+service: 'cloud-infraestructura'
 imageAlt: 'Ilustración de una ruta de migración por etapas desde servidores propios hacia la nube, con seguridad y control de costos'
 author: 'Equipo IT Solutions Group'
 ---

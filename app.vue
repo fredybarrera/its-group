@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { site } from '~/data/site'
+import { services } from '~/data/services'
 
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl
@@ -19,11 +20,14 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'Organization',
+        // ProfessionalService es un subtipo de LocalBusiness: habilita la búsqueda local.
+        '@type': ['Organization', 'ProfessionalService'],
+        '@id': organizationId(siteUrl),
         name: site.name,
         legalName: site.legalName,
         url: siteUrl,
-        logo: `${siteUrl.replace(/\/$/, '')}/logo.png`,
+        logo: absoluteUrl(siteUrl, '/logo.png'),
+        image: absoluteUrl(siteUrl, '/og/og-image.png'),
         description: site.description,
         foundingDate: String(site.foundedYear),
         email: site.contact.email,
@@ -34,6 +38,14 @@ useHead({
           addressLocality: site.contact.city,
           addressRegion: site.contact.region,
           addressCountry: 'CL',
+        },
+        areaServed: { '@type': 'Country', name: 'Chile' },
+        knowsAbout: services.map((s) => s.title),
+        openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: site.contact.hours.days,
+          opens: site.contact.hours.opens,
+          closes: site.contact.hours.closes,
         },
         sameAs: site.social.map((s) => s.href),
       }),

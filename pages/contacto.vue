@@ -5,7 +5,7 @@ import { site } from '~/data/site'
 useSeo({
   title: 'Contacto — Cotiza tu proyecto',
   description:
-    'Conversemos sobre tu proyecto de software, GIS/ArcGIS o nube Azure. Solicita una cotización, agenda una reunión o escríbenos por WhatsApp.',
+    'Desde Talcahuano para todo Chile: conversemos sobre tu proyecto de software, GIS o nube Azure. Cotiza, agenda una reunión o escríbenos por WhatsApp.',
   path: '/contacto',
 })
 
@@ -72,7 +72,7 @@ const calendlyUrl = useRuntimeConfig().public.calendlyUrl
                 </span>
                 <div>
                   <p class="text-xs uppercase tracking-wider text-slate-500">Horario</p>
-                  <p class="font-medium text-navy">Lun a Vie · 9:00 – 18:00</p>
+                  <p class="font-medium text-navy">{{ site.contact.hours.label }}</p>
                 </div>
               </li>
             </ul>
