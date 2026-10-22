@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       { name: 'Sora', provider: 'fontsource', weights: ['600 800'] },
     ],
     // Ambas se usan sobre el pliegue: precargarlas evita el salto de diseño al cambiar de fuente.
-    defaults: { subsets: ['latin'], styles: ['normal'], preload: true },
+    defaults: { subsets: ['latin'], styles: ['normal'], preload: false },
   },
 
   // Configuración en runtime. Las claves privadas (sin `public`) solo existen en
