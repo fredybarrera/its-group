@@ -8,6 +8,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'congreso-visible',
     title: 'Congreso Visible: datos oficiales del Congreso en un solo lugar',
+    seoTitle: 'Congreso Visible: datos oficiales del Congreso',
     client: 'Producto propio de IT Solutions Group',
     industry: 'Sector Público',
     serviceSlug: 'analitica-de-datos',
@@ -88,6 +89,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'reportes-mantenimiento-torres-telecom',
     title: 'Reportes de mantenimiento en terreno para torres de telecomunicaciones',
+    seoTitle: 'Reportes en terreno para torres de telecomunicaciones',
     client: 'Empresa de mantenimiento de infraestructura de telecomunicaciones', // ⚠️ nombrar al cliente solo con su autorización
     industry: 'Telecomunicaciones',
     serviceSlug: 'soluciones-industriales',
@@ -113,6 +115,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'football-intelligence-chile',
     title: 'Football Intelligence Chile: análisis de rendimiento para el fútbol profesional',
+    seoTitle: 'Football Intelligence Chile: análisis de rendimiento',
     client: 'Producto propio de IT Solutions Group',
     industry: 'Deportes',
     serviceSlug: 'analitica-de-datos',

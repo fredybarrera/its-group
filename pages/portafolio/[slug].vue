@@ -16,7 +16,7 @@ const relatedService = computed(() => getServiceBySlug(current.serviceSlug))
 const otherCases = caseStudies.filter((c) => c.slug !== current.slug).slice(0, 3)
 
 useSeo({
-  title: current.title,
+  title: current.seoTitle ?? current.title,
   description: current.summary,
   path: `/portafolio/${current.slug}`,
   image: current.ogImage,

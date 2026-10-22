@@ -83,6 +83,8 @@ export interface Service {
 export interface CaseStudy {
   slug: string
   title: string
+  /** Título para buscadores cuando `title` supera los 60 caracteres. */
+  seoTitle?: string
   client: string
   industry: string
   serviceSlug: string

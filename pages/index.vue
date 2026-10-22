@@ -24,9 +24,9 @@ useSeo({
     </section>
 
     <HomeMetrics v-if="sectionVisibility.metrics" />
-    <HomeServices />
-    <HomeCaseStudies />
+    <LazyHomeServices hydrate-on-idle />
+    <LazyHomeCaseStudies hydrate-on-idle />
     <HomeTestimonials v-if="sectionVisibility.testimonials" />
-    <CtaSection />
+    <LazyCtaSection hydrate-on-idle />
   </div>
 </template>
