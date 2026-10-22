@@ -43,8 +43,8 @@ conversión principal es **solicitar cotización** o **agendar una reunión**.
 - **Imágenes:** `@nuxt/image` (`<NuxtImg>`)
 - **Fuentes:** `@nuxt/fonts` (Inter y Sora servidas desde el propio sitio). Fijado en 0.11.x: la 0.12+
   depende de `@nuxt/kit` 4 (Nuxt 4). No vuelvas a enlazar la hoja de Google Fonts: bloquea el render.
-  Usa el proveedor `fontsource` con rango de pesos (`'400 800'`), solo `latin` y `normal`, y `preload`:
-  así salen 2 archivos variables (~80 KB). El proveedor `google` de esta versión ignora `subsets` y
+  Usa el proveedor `fontsource` con rango de pesos (`'400 800'`), solo `latin` y `normal`: así salen
+  2 archivos variables (~80 KB). Sin `preload`: precargarlas retrasa el LCP del hero. El proveedor `google` de esta versión ignora `subsets` y
   duplica cada fuente en WOFF: generaba ~180 `@font-face`, ~400 KB y ~1 s de estilo y layout en móvil.
 - **Iconos:** lucide-vue-next, importando cada ícono por nombre. Nunca `import * as icons`: envía la
   biblioteca completa (~500 KB) a cada página. Los íconos de servicios se registran en el mapa de

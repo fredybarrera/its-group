@@ -20,8 +20,8 @@ export default defineNuxtConfig({
       { name: 'Inter', provider: 'fontsource', weights: ['400 800'] },
       { name: 'Sora', provider: 'fontsource', weights: ['600 800'] },
     ],
-    // Ambas se usan sobre el pliegue: precargarlas evita el salto de diseño al cambiar de fuente.
-    defaults: { subsets: ['latin'], styles: ['normal'], preload: false },
+    // Sin precarga: con `preload` el texto del hero se repinta al llegar la fuente y el LCP sube ~0,4 s.
+    defaults: { subsets: ['latin'], styles: ['normal'] },
   },
 
   // Configuración en runtime. Las claves privadas (sin `public`) solo existen en
