@@ -13,12 +13,15 @@ export default defineNuxtConfig({
 
   // Fuentes descargadas en el build y servidas desde el propio sitio: evita la
   // hoja de Google Fonts que bloqueaba el render (~800 ms en móvil).
+  // Fontsource en vez de Google: respeta `subsets`, no agrega copias WOFF y entrega
+  // una sola fuente variable por familia (2 archivos en vez de ~180 @font-face).
   fonts: {
     families: [
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700, 800] },
-      { name: 'Sora', provider: 'google', weights: [600, 700, 800] },
+      { name: 'Inter', provider: 'fontsource', weights: ['400 800'] },
+      { name: 'Sora', provider: 'fontsource', weights: ['600 800'] },
     ],
-    defaults: { subsets: ['latin'] },
+    // Sin precarga: con `preload` el texto del hero se repinta al llegar la fuente y el LCP sube ~0,4 s.
+    defaults: { subsets: ['latin'], styles: ['normal'] },
   },
 
   // Configuración en runtime. Las claves privadas (sin `public`) solo existen en

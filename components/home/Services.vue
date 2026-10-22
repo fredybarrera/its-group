@@ -7,6 +7,7 @@ import { services } from '~/data/services'
 const coords = [
   'N 33°27\'', 'S 33°29\'', 'E 70°38\'',
   'W 70°41\'', 'N 33°31\'', 'S 33°24\'',
+  'S 36°43\'', 'W 73°07\'',
 ]
 </script>
 
@@ -26,7 +27,7 @@ const coords = [
             // servicios
           </span>
           <h2 class="font-display mt-3 text-4xl font-bold tracking-tight text-navy sm:text-5xl">
-            Seis líneas.<br />
+            Ocho líneas.<br />
             <span class="text-slate-500">Un solo equipo.</span>
           </h2>
         </div>
